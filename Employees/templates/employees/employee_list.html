@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+{{ object_list }}
+<table>
+    <tr>
+        <th>ID</th>
+        <th>First_Name</th>
+        <th>Last_Name</th>
+        <th>Hire_status</th>
+        <th>Hire_date</th>
+        <th>Rate</th>
+        <th>Permit Number</th>
+        <th>phone_number</th>
+        <th>Email</th>
+    </tr>
+{% for instance in object_list %}
+
+<tr>
+    <td>{{ instance.id }}</td>
+    <td><a href='{{ instance.get_absolute_url }}'> {{ instance.First_Name }}</a></td>
+    <td>{{  instance.Last_Name  }}</td>
+    <td>{{  instance.Hire_status  }}</td>
+    <td>{{  instance.Hire_date  }}</td>
+    <td>{{  instance.Rate  }}</td>
+    <td>{{  instance.Permit  }}</td>
+    <td>{{  instance.phone_number  }}</td>
+    <td>{{  instance.Email  }}</td>
+</tr>
+
+{% endfor %}
+    </table>
+
+{% endblock %}

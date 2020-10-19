@@ -4,7 +4,7 @@ from .views import (
     inventorycreateview,
     inventorydetailview,
     inventoryupdateview,
-    productiondeleteview,
+    inventorydeleteview,
 
 )
 app_name ='inventory'
@@ -13,7 +13,7 @@ urlpatterns = [
     path('create/', inventorycreateview.as_view(), name='inventory-create'),
     path('<int:id>/', inventorydetailview.as_view(), name='inventory-detail'),
     path('<int:id>/update/', inventoryupdateview.as_view(), name='inventory-update'),
-    path('<int:id>/delete/', productiondeleteview.as_view(), name='production-delete'),
+    path('<int:id>/delete/', inventorydeleteview.as_view(), name='inventory-delete'),
 
 
 ]

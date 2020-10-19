@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404, reverse
-from .models import Production_tracker
+from .models import Production_tracker, Tasks
+from inventory.models import Inventory_Log
 from .forms import Productionform
+from django.db.transaction import atomic
 from django.views.generic import (
 CreateView,
 DetailView,
@@ -23,8 +25,17 @@ class productioncreateview(CreateView):
     queryset = Production_tracker.objects.all()
 
     def form_valid(self, form):
-        print(form.cleaned_data)
-        return super().form_valid(form)
+        obj1 = Inventory_Log(
+            Emp=form.cleaned_data.get('Employee'),
+            Date=form.cleaned_data.get('End_time'),
+            supply=form.cleaned_data.get('Task').task,
+            supply_amt=form.cleaned_data.get('Count'))
+
+        obj1.save()
+        print(obj1)
+        return super(productioncreateview, self).form_valid(form)
+
+
 
 
 class productiondetailview(DetailView):

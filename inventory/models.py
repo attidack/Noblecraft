@@ -6,7 +6,7 @@ class Inventory_Log(models.Model):
     Emp = models.ForeignKey('Employees.Employee', on_delete=models.CASCADE)
     supply = models.CharField(max_length=120)
     supply_amt = models.IntegerField()
-    per_box = models.IntegerField()
+    per_box = models.IntegerField(null=True, blank=True)
     Date = models.DateTimeField()
 
     def get_absolute_url(self):

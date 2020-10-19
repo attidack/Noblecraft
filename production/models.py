@@ -6,6 +6,7 @@ from django.urls import reverse
 
 class Tasks(models.Model):
     task = models.CharField(max_length=120)
+    finished_product = models.CharField(max_length=120)
 
     def __str__(self):
         return self.task
@@ -14,6 +15,7 @@ class Tasks(models.Model):
         return reverse("production:production-tracker", kwargs={"id": self.id})
 
 class Pre_roll_1g_manuf(models.Model):
+    finished_product = models.CharField(max_length=120)
     pre_roll_amt = models.IntegerField()
     cone_amt = models.IntegerField()
     canna_amount = models.IntegerField()
@@ -23,6 +25,7 @@ class Pre_roll_1g_manuf(models.Model):
 
 
 class Preroll_half_manuf(models.Model):
+    finished_product = models.CharField(max_length=120)
     pre_roll_amt = models.IntegerField()
     cone_amt = models.IntegerField()
     canna_amount = models.IntegerField()
@@ -32,6 +35,7 @@ class Preroll_half_manuf(models.Model):
 
 
 class Box_manuf(models.Model):
+    finished_product = models.CharField(max_length=120)
     finished_box_amt = models.IntegerField()
     pre_roll_amt = models.IntegerField()
     box_amt = models.IntegerField()
@@ -43,6 +47,7 @@ class Box_manuf(models.Model):
 
 
 class tube_2half_manuf(models.Model):
+    finished_product = models.CharField(max_length=120)
     finished_2half_amt = models.IntegerField()
     pre_roll_amt = models.IntegerField()
     plastic_tube = models.IntegerField()
@@ -55,6 +60,7 @@ class tube_2half_manuf(models.Model):
         return reverse("production:production-tracker", kwargs={"id": self.id})
 
 class tube_full_manuf(models.Model):
+    finished_product = models.CharField(max_length=120)
     finished_2half_amt = models.IntegerField()
     pre_roll_amt = models.IntegerField()
     plastic_tube = models.IntegerField()
@@ -64,10 +70,10 @@ class tube_full_manuf(models.Model):
         return reverse("production:production-tracker", kwargs={"id": self.id})
 
 class Production_tracker(models.Model):
-    Employee = models.ForeignKey('Employees.Employee', on_delete=models.CASCADE)
+    Employee = models.ForeignKey('Employees.Employee', on_delete=models.PROTECT)
     Start_time = models.DateTimeField()
     End_time = models.DateTimeField()
-    Task = models.ForeignKey('Tasks', on_delete=models.CASCADE)
+    Task = models.ForeignKey('Tasks', on_delete=models.PROTECT)
     Count = models.IntegerField()
 
     def get_absolute_url(self):

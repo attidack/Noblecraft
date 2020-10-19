@@ -1,11 +1,12 @@
 from Employees.models import Employee
 from django import forms
+from django.contrib.admin.widgets import AdminSplitDateTime
 from .models import Production_tracker, Tasks
 
 class Productionform(forms.ModelForm):
     Employee = forms.ModelChoiceField(queryset=Employee.objects.all().order_by('First_Name'))
     Start_time = forms.DateTimeField()
-    End_time = forms.DateTimeField()
+    End_time = forms.DateTimeField(default=today)
     Task = forms.ModelChoiceField(queryset=Tasks.objects.all().order_by('task'))
     Count = forms.IntegerField()
 

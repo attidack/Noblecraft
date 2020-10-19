@@ -1,38 +1,60 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from .models import Production_tracker
 from .forms import Productionform
+from django.views.generic import (
+CreateView,
+DetailView,
+ListView,
+UpdateView,
+DeleteView
+)
+class productiontrackerview(ListView):
+    template_name = 'productions/production_tracker.html'
+    def get(self, request, *args, **kwargs):
+        queryset = Production_tracker.objects.all()
+        context = {
+            "object_list": queryset
+        }
+        return render(request, self.template_name, context)
 
-def production_tracker_view(request):
+class productioncreateview(CreateView):
+    template_name = 'productions/production_create.html'
+    form_class = Productionform
     queryset = Production_tracker.objects.all()
-    context = {
-        "object_list": queryset
-    }
-    return render(request, "productions/production_tracker.html", context)
 
-def production_create_view(request):
-    form = Productionform(request.POST or None)
-    if form.is_valid():
-        form.save()
-        form = Productionform()
-    context = {
-        'form': form
-    }
+    def form_valid(self, form):
+        print(form.cleaned_data)
+        return super().form_valid(form)
 
-    return render(request, "productions/production_create.html", context)
+class productiondetailview(DetailView):
+    template_name = 'productions/production_detail.html'
+    # queryset = Article.objects.all()
 
-def production_detail_view(request, id):
-    obj = get_object_or_404(Production_tracker, id=id)
-    context = {
-        'object': obj
-    }
-    return render(request, "productions/production_detail.html", context)
+    def get_object(self):
+        id_ = self.kwargs.get("id")
+        return get_object_or_404(Production_tracker, id=id_)
 
-def production_delete_view(request, id):
-    obj = get_object_or_404(Production_tracker, id=id)
-    if request.method == "POST":
-        obj.delete()
-        return redirect('../')
-    context = {
-        "object": obj
-    }
-    return render(request, "productions/productions_delete.html", context)
+class productionupdateview(UpdateView):
+    template_name = 'productions/production_create.html'
+    form_class = Productionform
+    queryset = Production_tracker.objects.all()
+
+    def get_object(self):
+        id_ = self.kwargs.get("id")
+        return get_object_or_404(Production_tracker, id=id_)
+
+    def form_valid(self, form):
+        print(form.cleaned_data)
+        return super().form_valid(form)
+
+class productiondeleteview(DeleteView):
+    template_name = 'productions/productions_delete.html'
+
+
+    def get_object(self):
+        id_ = self.kwargs.get("id")
+        return get_object_or_404(Production_tracker, id=id_)
+
+    def get_success_url(self):
+        return reverse('production:production-tracker')
+

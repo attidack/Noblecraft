@@ -26,6 +26,7 @@ class productioncreateview(CreateView):
         print(form.cleaned_data)
         return super().form_valid(form)
 
+
 class productiondetailview(DetailView):
     template_name = 'productions/production_detail.html'
     # queryset = Article.objects.all()

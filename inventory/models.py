@@ -14,7 +14,7 @@ class Inventory_Log(models.Model):
     Emp = models.ForeignKey('Employees.Employee', on_delete=models.CASCADE)
     supply = models.CharField(max_length=120)
     supply_amt = models.IntegerField()
-    Date = models.DateField()
+    Date = models.DateTimeField()
 
     def get_absolute_url(self):
         return reverse("inventories:inventory-log", kwargs={"id": self.id})

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Employee</th>
+        <th>Supply</th>
+        <th>Supply Amount</th>
+        <th>Date</th>
+    </tr>
+{% for instance in object_list %}
+
+<tr>
+    <td>{{ instance.id }}</td>
+    <td><a href='{{ instance.get_absolute_url }}'> {{ instance.Emp }}</a></td>
+    <td>{{  instance.supply  }}</td>
+    <td>{{  instance.supply_amt  }}</td>
+    <td>{{  instance.Date  }}</td>
+</tr>
+{% endblock %}

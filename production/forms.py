@@ -17,4 +17,5 @@ class Productionform(forms.ModelForm):
             'End_time',
             'Task',
             'Count',
+            'UID'
         ]

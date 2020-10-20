@@ -8,6 +8,7 @@ class Inventory_Log(models.Model):
     supply_amt = models.IntegerField()
     per_box = models.IntegerField(null=True, blank=True)
     Date = models.DateTimeField()
+    UID = models.IntegerField(null=True, blank=True)
 
     def get_absolute_url(self):
         return reverse('inventory:inventory-detail', kwargs={"id": self.id})

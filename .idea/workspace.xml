@@ -2,13 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0159a6c5-3382-43b2-aa34-855b5c8bfead" name="Default Changelist" comment="update">
+      <change afterPath="$PROJECT_DIR$/inventory/migrations/0004_auto_20201019_1151.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory/migrations/0005_auto_20201019_1554.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory/migrations/0006_inventory_log_uid.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/production/migrations/0003_tasks_finished_product.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/production/migrations/0004_auto_20201019_1306.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/production/migrations/0005_auto_20201019_1932.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/production/migrations/0006_pre_roll_1g_manuf_input1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/production/migrations/0007_auto_20201019_2143.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/production/migrations/0008_auto_20201019_2151.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/production/migrations/0009_auto_20201019_2153.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/production/migrations/0010_twisting_preroll_half_manuf.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/production/migrations/0011_auto_20201020_1026.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/production/migrations/0012_auto_20201020_1030.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/production/migrations/0013_twisting_preroll_1g_manuf.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/production/migrations/0014_production_tracker_uid.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/production/migrations/0015_auto_20201020_1144.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/production/migrations/0016_auto_20201020_1146.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/production/migrations/0017_auto_20201020_1226.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/production/migrations/0018_auto_20201020_1230.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/production/migrations/0019_auto_20201020_1243.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/production/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +154,7 @@
       <workItem from="1602896375819" duration="5926000" />
       <workItem from="1602907075040" duration="2816000" />
       <workItem from="1602909927171" duration="46145000" />
-      <workItem from="1603036534980" duration="90496000" />
+      <workItem from="1603036534980" duration="91300000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1603077590305</created>
@@ -211,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603170048445</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="update">
+      <created>1603225292023</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1603225292023</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

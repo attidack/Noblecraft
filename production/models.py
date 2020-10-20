@@ -19,8 +19,9 @@ class Pre_roll_1g_manuf(models.Model):
     pre_roll_amt = models.IntegerField()
     input1 = models.CharField(max_length=120)
     cone_amt = models.IntegerField()
+    input2 = models.CharField(max_length=120, default='cannabis')
     canna_amount = models.DecimalField(max_digits=10, decimal_places=2)
-    date = models.DateTimeField()
+
 
     def get_absolute_url(self):
         return reverse("production:production-tracker", kwargs={"id": self.id})
@@ -29,9 +30,10 @@ class Pre_roll_1g_manuf(models.Model):
 class Preroll_half_manuf(models.Model):
     finished_product = models.CharField(max_length=120)
     pre_roll_amt = models.IntegerField()
+    input1 = models.CharField(max_length=120, default='cone')
     cone_amt = models.IntegerField()
-    canna_amount = models.IntegerField()
-    date = models.DateTimeField()
+    input2 = models.CharField(max_length=120, default='cannabis')
+    canna_amount = models.DecimalField(max_digits=10, decimal_places=2)
 
     def get_absolute_url(self):
         return reverse("production:production-tracker", kwargs={"id": self.id})

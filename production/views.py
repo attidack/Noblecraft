@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, reverse
-from .models import Production_tracker, Pre_roll_1g_manuf
+from .models import Production_tracker, Pre_roll_1g_manuf, Preroll_half_manuf
 from inventory.models import Inventory_Log
 from .forms import Productionform
 from django.views.generic import (
@@ -34,9 +34,37 @@ class productioncreateview(CreateView):
             sgoprcone = Inventory_Log(
             Emp=form.cleaned_data.get('Employee'),
             Date=form.cleaned_data.get('End_time'),
-            supply=Pre_roll_1g_manuf.get(input1),
+            supply=menu.input1,
             supply_amt=menu.cone_amt * -1)
             sgoprcone.save()
+
+            sgoprcanna = Inventory_Log(
+            Emp=form.cleaned_data.get('Employee'),
+            Date=form.cleaned_data.get('End_time'),
+            supply=menu.input2,
+            supply_amt=menu.canna_amount * -1)
+            sgoprcanna.save()
+
+        elif form.cleaned_data.get('Task').finished_product == 'halfg_open_pre_roll':
+            menu = Preroll_half_manuf.objects.first()
+            menu.pre_roll_amt = form.cleaned_data.get('Count') * menu.pre_roll_amt
+            menu.cone_amt = form.cleaned_data.get('Count') * menu.cone_amt
+            menu.canna_amount = form.cleaned_data.get('Count') * menu.canna_amount
+
+            hgoprcone = Inventory_Log(
+            Emp=form.cleaned_data.get('Employee'),
+            Date=form.cleaned_data.get('End_time'),
+            supply=menu.input1,
+            supply_amt=menu.cone_amt * -1)
+            hgoprcone.save()
+
+            hgoprcanna = Inventory_Log(
+            Emp=form.cleaned_data.get('Employee'),
+            Date=form.cleaned_data.get('End_time'),
+            supply=menu.input2,
+            supply_amt=menu.canna_amount * -1)
+            hgoprcanna.save()
+
 
         obj1 = Inventory_Log(
             Emp=form.cleaned_data.get('Employee'),

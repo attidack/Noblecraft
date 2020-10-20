@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0159a6c5-3382-43b2-aa34-855b5c8bfead" name="Default Changelist" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/production/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/production/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/views.py" afterDir="false" />
     </list>
@@ -136,7 +136,7 @@
       <workItem from="1602896375819" duration="5926000" />
       <workItem from="1602907075040" duration="2816000" />
       <workItem from="1602909927171" duration="46145000" />
-      <workItem from="1603036534980" duration="72611000" />
+      <workItem from="1603036534980" duration="78106000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1603077590305</created>
@@ -194,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603163012826</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="update">
+      <created>1603164394708</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1603164394708</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,38 +241,38 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="1102" y="410" key="Github.UntrackedFilesDialog/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603077416137" />
-    <state width="2517" height="494" key="GridCell.Tab.0.bottom" timestamp="1603163971945">
+    <state width="2517" height="266" key="GridCell.Tab.0.bottom" timestamp="1603168463280">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="494" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603163971945" />
-    <state width="2517" height="494" key="GridCell.Tab.0.center" timestamp="1603163971943">
+    <state width="2517" height="266" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603168463280" />
+    <state width="2517" height="266" key="GridCell.Tab.0.center" timestamp="1603168463280">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="494" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603163971943" />
-    <state width="2517" height="494" key="GridCell.Tab.0.left" timestamp="1603163971943">
+    <state width="2517" height="266" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603168463280" />
+    <state width="2517" height="266" key="GridCell.Tab.0.left" timestamp="1603168463280">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="494" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603163971943" />
-    <state width="2517" height="494" key="GridCell.Tab.0.right" timestamp="1603163971944">
+    <state width="2517" height="266" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603168463280" />
+    <state width="2517" height="266" key="GridCell.Tab.0.right" timestamp="1603168463280">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="494" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603163971944" />
-    <state width="2517" height="494" key="GridCell.Tab.1.bottom" timestamp="1603164081352">
+    <state width="2517" height="266" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603168463280" />
+    <state width="2517" height="494" key="GridCell.Tab.1.bottom" timestamp="1603168459657">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="494" key="GridCell.Tab.1.bottom/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603164081352" />
-    <state width="2517" height="494" key="GridCell.Tab.1.center" timestamp="1603164081351">
+    <state width="2517" height="494" key="GridCell.Tab.1.bottom/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603168459657" />
+    <state width="2517" height="494" key="GridCell.Tab.1.center" timestamp="1603168459656">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="494" key="GridCell.Tab.1.center/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603164081351" />
-    <state width="2517" height="494" key="GridCell.Tab.1.left" timestamp="1603164081351">
+    <state width="2517" height="494" key="GridCell.Tab.1.center/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603168459656" />
+    <state width="2517" height="494" key="GridCell.Tab.1.left" timestamp="1603168459656">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="494" key="GridCell.Tab.1.left/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603164081351" />
-    <state width="2517" height="494" key="GridCell.Tab.1.right" timestamp="1603164081351">
+    <state width="2517" height="494" key="GridCell.Tab.1.left/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603168459656" />
+    <state width="2517" height="494" key="GridCell.Tab.1.right" timestamp="1603168459656">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="494" key="GridCell.Tab.1.right/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603164081351" />
+    <state width="2517" height="494" key="GridCell.Tab.1.right/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603168459656" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1603037117522">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
@@ -274,10 +281,10 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="781" y="350" key="SettingsEditor/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603078299619" />
-    <state x="872" y="425" key="Vcs.Push.Dialog.v2" timestamp="1603163019380">
+    <state x="872" y="425" key="Vcs.Push.Dialog.v2" timestamp="1603164665133">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="872" y="425" key="Vcs.Push.Dialog.v2/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603163019380" />
+    <state x="872" y="425" key="Vcs.Push.Dialog.v2/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603164665133" />
     <state x="-735" y="533" width="1173" height="715" key="dock-window-1" timestamp="1603060528499">
       <screen x="-1920" y="349" width="1920" height="1050" />
     </state>
@@ -297,13 +304,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/production/views.py</url>
-          <line>36</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -317,5 +317,8 @@
         <watch expression="form.cleaned_data.get('Task').finished_product" language="Python" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Noblecraft$views.coverage" NAME="views Coverage Results" MODIFIED="1603168463276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/production" />
   </component>
 </project>

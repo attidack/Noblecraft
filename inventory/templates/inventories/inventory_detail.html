@@ -8,13 +8,14 @@
         <th>Supply Amount</th>
         <th>Date</th>
     </tr>
-{% for instance in object_list %}
+
 
 <tr>
-    <td>{{ instance.id }}</td>
-    <td><a href='{{ instance.get_absolute_url }}'> {{ instance.Emp }}</a></td>
-    <td>{{  instance.supply  }}</td>
-    <td>{{  instance.supply_amt  }}</td>
-    <td>{{  instance.Date  }}</td>
+    <td>{{object.id}}</td>
+    <td><a href='{{ instance.get_absolute_url }}'> {{ object.Emp }}</a></td>
+    <td>{{ object.supply }}</td>
+    <td>{{ object.supply_amt }}</td>
+    <td>{{ object.Date }}</td>
 </tr>
+</table>
 {% endblock %}

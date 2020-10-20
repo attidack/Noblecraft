@@ -1,8 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
-from .models import Production_tracker, Tasks
+from .models import Production_tracker, Pre_roll_1g_manuf
 from inventory.models import Inventory_Log
 from .forms import Productionform
-from django.db.transaction import atomic
 from django.views.generic import (
 CreateView,
 DetailView,
@@ -19,16 +18,23 @@ class productiontrackerview(ListView):
         }
         return render(request, self.template_name, context)
 
+
 class productioncreateview(CreateView):
     template_name = 'productions/production_create.html'
     form_class = Productionform
     queryset = Production_tracker.objects.all()
 
     def form_valid(self, form):
+        if form.cleaned_data.get('Task').finished_product == '1g_open_pre_roll':
+            menu = Pre_roll_1g_manuf.objects.first()
+            menu.pre_roll_amt = form.cleaned_data.get('Count') * menu.pre_roll_amt
+            menu.cone_amt = form.cleaned_data.get('Count') * menu.cone_amt
+            menu.canna_amount = form.cleaned_data.get('Count') * menu.canna_amount
+            menu.save()
         obj1 = Inventory_Log(
             Emp=form.cleaned_data.get('Employee'),
             Date=form.cleaned_data.get('End_time'),
-            supply=form.cleaned_data.get('Task').task,
+            supply=form.cleaned_data.get('Task').finished_product,
             supply_amt=form.cleaned_data.get('Count'))
 
         obj1.save()
@@ -36,15 +42,13 @@ class productioncreateview(CreateView):
         return super(productioncreateview, self).form_valid(form)
 
 
-
-
 class productiondetailview(DetailView):
     template_name = 'productions/production_detail.html'
-    # queryset = Article.objects.all()
 
     def get_object(self):
         id_ = self.kwargs.get("id")
         return get_object_or_404(Production_tracker, id=id_)
+
 
 class productionupdateview(UpdateView):
     template_name = 'productions/production_create.html'
@@ -58,6 +62,7 @@ class productionupdateview(UpdateView):
     def form_valid(self, form):
         print(form.cleaned_data)
         return super().form_valid(form)
+
 
 class productiondeleteview(DeleteView):
     template_name = 'productions/productions_delete.html'

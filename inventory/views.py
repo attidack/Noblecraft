@@ -34,8 +34,6 @@ class inventorycreateview(CreateView):
 # Create your views here.
 class inventorydetailview(DetailView):
     template_name = 'inventories/inventory_detail.html'
-    # queryset = Article.objects.all()
-
     def get_object(self):
         id_ = self.kwargs.get("id")
         return get_object_or_404(Inventory_Log, id=id_)
@@ -43,7 +41,7 @@ class inventorydetailview(DetailView):
 class inventoryupdateview(UpdateView):
     template_name = 'inventories/inventory_create.html'
     form_class = Inventoryform
-    queryset = Inventory_Log.objects.objects.all()
+    queryset = Inventory_Log.objects.all()
 
     def get_object(self):
         id_ = self.kwargs.get("id")

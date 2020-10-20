@@ -30,7 +30,14 @@ class productioncreateview(CreateView):
             menu.pre_roll_amt = form.cleaned_data.get('Count') * menu.pre_roll_amt
             menu.cone_amt = form.cleaned_data.get('Count') * menu.cone_amt
             menu.canna_amount = form.cleaned_data.get('Count') * menu.canna_amount
-            menu.save()
+
+            sgoprcone = Inventory_Log(
+            Emp=form.cleaned_data.get('Employee'),
+            Date=form.cleaned_data.get('End_time'),
+            supply=Pre_roll_1g_manuf.get(input1),
+            supply_amt=menu.cone_amt * -1)
+            sgoprcone.save()
+
         obj1 = Inventory_Log(
             Emp=form.cleaned_data.get('Employee'),
             Date=form.cleaned_data.get('End_time'),
@@ -38,7 +45,6 @@ class productioncreateview(CreateView):
             supply_amt=form.cleaned_data.get('Count'))
 
         obj1.save()
-        print(obj1)
         return super(productioncreateview, self).form_valid(form)
 
 

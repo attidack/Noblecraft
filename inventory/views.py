@@ -27,7 +27,6 @@ class inventorycreateview(CreateView):
     queryset = Inventory_Log.objects.all()
 
     def form_valid(self, form):
-        print(form.cleaned_data)
         return super().form_valid(form)
 
 
@@ -48,7 +47,6 @@ class inventoryupdateview(UpdateView):
         return get_object_or_404(Inventory_Log, id=id_)
 
     def form_valid(self, form):
-        print(form.cleaned_data)
         return super().form_valid(form)
 
 class inventorydeleteview(DeleteView):

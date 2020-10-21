@@ -97,7 +97,7 @@ class Finished_Box_manuf(models.Model):
     input2 = models.CharField(max_length=120, default='Plastic_wrap')
     input2_amt = models.IntegerField()
     input3 = models.CharField(max_length=120, default='Ribbon')
-    input3_amount = models.IntegerField()
+    input3_amt = models.IntegerField()
 
     def __str__(self):
         return "%s" % self.finished_product

@@ -37,9 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'products',
     'pages',
-    'blog',
     'production',
     'Employees',
     'inventory',
@@ -82,7 +80,7 @@ WSGI_APPLICATION = 'Noblecraft.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'noblecraftdb',
+        'NAME': 'nobleinventory',
         'USER': 'postgres',
         'PASSWORD': 'w33disg00d!',
         'HOST': '127.0.0.1',

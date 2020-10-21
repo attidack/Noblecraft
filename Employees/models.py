@@ -19,4 +19,4 @@ class Employee(models.Model):
         return "%s %s" % (self.First_Name, self.Last_Name)
 
     def get_absolute_url(self):
-        return reverse("products:product-detail", kwargs={"id": self.id})
+        return reverse("production:production-tracker", kwargs={"id": self.id})

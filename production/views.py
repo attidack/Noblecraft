@@ -38,6 +38,7 @@ class productioncreateview(CreateView):
     queryset = Production_tracker.objects.all()
 
     def form_valid(self, form):
+        form.instance.created_by = self.request.user
         if form.cleaned_data.get('Task').finished_product == '1g_open_pre_roll':
             menu1gopr = Pre_roll_1g_manuf.objects.first()
             menu1gopr.cone_amt = form.cleaned_data.get('Count') * menu1gopr.cone_amt
@@ -47,7 +48,7 @@ class productioncreateview(CreateView):
             Emp=form.cleaned_data.get('Employee'),
             Date=form.cleaned_data.get('End_time'),
             supply=menu1gopr.input1,
-            supply_amt=menu1gopr.cone_amt * -1)
+            supply_amt=menu1gopr.cone_amt * -1,)
             sgoprcone.save()
 
             sgoprcanna = Inventory_Log(
@@ -102,7 +103,7 @@ class productioncreateview(CreateView):
             UID=form.cleaned_data.get('UID'))
             twgpr.save()
 
-        elif form.cleaned_data.get('Task').finished_product == 'Unwrapped-box':
+        elif form.cleaned_data.get('Task').finished_product == 'Unwrapped_box':
             menuuwbhg = Unwrapped_Box_manuf.objects.first()
             menuuwbhg.pre_roll_amt = form.cleaned_data.get('Count') * menuuwbhg.pre_roll_amt
             menuuwbhg.box_amt = form.cleaned_data.get('Count') * menuuwbhg.box_amt
@@ -163,7 +164,7 @@ class productioncreateview(CreateView):
             Emp=form.cleaned_data.get('Employee'),
             Date=form.cleaned_data.get('End_time'),
             supply=menufb.input3,
-            supply_amt=menufb.input3_amt * -1,)
+            supply_amt=menufb.input3_amt * -1)
             input3log.save()
 
         elif form.cleaned_data.get('Task').finished_product == 'Preroll_tube_2_half_grams':
@@ -191,7 +192,7 @@ class productioncreateview(CreateView):
             Emp=form.cleaned_data.get('Employee'),
             Date=form.cleaned_data.get('End_time'),
             supply=menupt2hg.input3,
-            supply_amt=menupt2hg.input3_amt * -1,)
+            supply_amt=menupt2hg.input3_amt * -1)
             input3log.save()
 
         elif form.cleaned_data.get('Task').finished_product == 'Preroll_tube_1_gram':
@@ -219,7 +220,7 @@ class productioncreateview(CreateView):
             Emp=form.cleaned_data.get('Employee'),
             Date=form.cleaned_data.get('End_time'),
             supply=menupt1g.input3,
-            supply_amt=menupt1g.input3_amt * -1,)
+            supply_amt=menupt1g.input3_amt * -1)
             input3log.save()
 
         obj1 = Inventory_Log(

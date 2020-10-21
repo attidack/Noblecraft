@@ -6,7 +6,7 @@ class Productionform(forms.ModelForm):
     class Meta:
         model = Production_tracker
         fields = [
-            'Employee',
+            'user_id',
             'Start_time',
             'End_time',
             'Task',
@@ -18,7 +18,7 @@ class Productionformstart(forms.ModelForm):
     class Meta:
         model = Production_tracker_start
         fields = [
-            'Employee',
+            'user_id',
             'Start_time',
             'Task',
             'UID'
@@ -28,7 +28,7 @@ class Productionformend(forms.ModelForm):
     class Meta:
         model = Production_tracker_end
         fields = [
-            'Employee',
+            'user_id',
             'End_time',
             'Task',
             'Count',

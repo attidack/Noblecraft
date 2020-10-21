@@ -44,18 +44,23 @@
 <body>
     <div class="sidenav">
         <a href="/">Home</a>
+
+        {% if user.is_authenticated %}
         <a href="/production/start">Start</a>
         <a href="/inventory">Inventory</a>
         <a href="/production">Production</a>
-
+        {% else %}
+        <a href="/register">Register</a>
+        <a href="/login">Login Here</a>
+        {% endif %}
     </div>
     <div id="content", name="content", class="main">
         <div>
             <div class="col-8">
                 <h1 class="mt-2">Noblecraft Inventory Manager</h1>
                 <hr class="mt-0 mb-4">
-    {% block content %}
-    {% endblock %}
+                    {% block content %}
+                    {% endblock %}
             </div>
         </div>
     </div>

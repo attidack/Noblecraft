@@ -41,7 +41,7 @@ class productioncreateviewstart(CreateView):
 
     def form_valid(self, form):
         obj1 = Production_tracker(
-            Employee=form.cleaned_data.get('Employee'),
+            user=form.cleaned_data.get('user'),
             Start_time=form.cleaned_data.get('Start_time'),
             Task=form.cleaned_data.get('Task'),
             UID=form.cleaned_data.get('UID'),
@@ -62,14 +62,14 @@ class productioncreateviewend(CreateView):
             menu1gopr.canna_amount = form.cleaned_data.get('Count') * menu1gopr.canna_amount
 
             sgoprcone = Inventory_Log(
-                Emp=form.cleaned_data.get('Employee'),
+                user_id=form.cleaned_data.get('user_id'),
                 Date=form.cleaned_data.get('End_time'),
                 supply=menu1gopr.input1,
                 supply_amt=menu1gopr.cone_amt * -1, )
             sgoprcone.save()
 
             sgoprcanna = Inventory_Log(
-                Emp=form.cleaned_data.get('Employee'),
+                user_id=form.cleaned_data.get('user_id'),
                 Date=form.cleaned_data.get('End_time'),
                 supply=menu1gopr.input2,
                 supply_amt=menu1gopr.canna_amount * -1,
@@ -82,14 +82,14 @@ class productioncreateviewend(CreateView):
             menuhgopr.canna_amount = form.cleaned_data.get('Count') * menuhgopr.canna_amount
 
             hgoprcone = Inventory_Log(
-                Emp=form.cleaned_data.get('Employee'),
+                user_id=form.cleaned_data.get('user_id'),
                 Date=form.cleaned_data.get('End_time'),
                 supply=menuhgopr.input1,
                 supply_amt=menuhgopr.cone_amt * -1)
             hgoprcone.save()
 
             hgoprcanna = Inventory_Log(
-                Emp=form.cleaned_data.get('Employee'),
+                user_id=form.cleaned_data.get('user_id'),
                 Date=form.cleaned_data.get('End_time'),
                 supply=menuhgopr.input2,
                 supply_amt=menuhgopr.canna_amount * -1,
@@ -102,7 +102,7 @@ class productioncreateviewend(CreateView):
             menut.input1_amt = form.cleaned_data.get('Count') * menut.input1_amt
 
             twhgpr = Inventory_Log(
-                Emp=form.cleaned_data.get('Employee'),
+                user_id=form.cleaned_data.get('user_id'),
                 Date=form.cleaned_data.get('End_time'),
                 supply=menut.input1,
                 supply_amt=menut.input1_amt * -1)
@@ -113,7 +113,7 @@ class productioncreateviewend(CreateView):
             menut1g.input1_amt = form.cleaned_data.get('Count') * menut1g.input1_amt
 
             twgpr = Inventory_Log(
-                Emp=form.cleaned_data.get('Employee'),
+                user_id=form.cleaned_data.get('user_id'),
                 Date=form.cleaned_data.get('End_time'),
                 supply=menut1g.input1,
                 supply_amt=menut1g.input1_amt * -1,
@@ -128,7 +128,7 @@ class productioncreateviewend(CreateView):
             menuuwbhg.canna_sticker_amount = form.cleaned_data.get('Count') * menuuwbhg.canna_sticker_amount
 
             uwbprhg = Inventory_Log(
-                Emp=form.cleaned_data.get('Employee'),
+                user_id=form.cleaned_data.get('user_id'),
                 Date=form.cleaned_data.get('End_time'),
                 supply=menuuwbhg.input1,
                 supply_amt=menuuwbhg.pre_roll_amt * -1,
@@ -136,21 +136,21 @@ class productioncreateviewend(CreateView):
             uwbprhg.save()
 
             uwbb = Inventory_Log(
-                Emp=form.cleaned_data.get('Employee'),
+                user_id=form.cleaned_data.get('user_id'),
                 Date=form.cleaned_data.get('End_time'),
                 supply=menuuwbhg.input2,
                 supply_amt=menuuwbhg.box_amt * -1)
             uwbb.save()
 
             uwblbl = Inventory_Log(
-                Emp=form.cleaned_data.get('Employee'),
+                user_id=form.cleaned_data.get('user_id'),
                 Date=form.cleaned_data.get('End_time'),
                 supply=menuuwbhg.input3,
                 supply_amt=menuuwbhg.label_amount * -1)
             uwblbl.save()
 
             uwbcannalbl = Inventory_Log(
-                Emp=form.cleaned_data.get('Employee'),
+                user_id=form.cleaned_data.get('user_id'),
                 Date=form.cleaned_data.get('End_time'),
                 supply=menuuwbhg.input4,
                 supply_amt=menuuwbhg.label_amount * -1)
@@ -163,7 +163,7 @@ class productioncreateviewend(CreateView):
             menufb.input3_amt = form.cleaned_data.get('Count') * menufb.input3_amt
 
             input1log = Inventory_Log(
-                Emp=form.cleaned_data.get('Employee'),
+                user_id=form.cleaned_data.get('user_id'),
                 Date=form.cleaned_data.get('End_time'),
                 supply=menufb.input1,
                 supply_amt=menufb.input1_amt * -1,
@@ -171,14 +171,14 @@ class productioncreateviewend(CreateView):
             input1log.save()
 
             input2log = Inventory_Log(
-                Emp=form.cleaned_data.get('Employee'),
+                user_id=form.cleaned_data.get('user_id'),
                 Date=form.cleaned_data.get('End_time'),
                 supply=menufb.input2,
                 supply_amt=menufb.input2_amt * -1)
             input2log.save()
 
             input3log = Inventory_Log(
-                Emp=form.cleaned_data.get('Employee'),
+                user_id=form.cleaned_data.get('user_id'),
                 Date=form.cleaned_data.get('End_time'),
                 supply=menufb.input3,
                 supply_amt=menufb.input3_amt * -1)
@@ -191,7 +191,7 @@ class productioncreateviewend(CreateView):
             menupt2hg.input3_amt = form.cleaned_data.get('Count') * menupt2hg.input3_amt
 
             input1log = Inventory_Log(
-                Emp=form.cleaned_data.get('Employee'),
+                user_id=form.cleaned_data.get('user_id'),
                 Date=form.cleaned_data.get('End_time'),
                 supply=menupt2hg.input1,
                 supply_amt=menupt2hg.input1_amt * -1,
@@ -199,14 +199,14 @@ class productioncreateviewend(CreateView):
             input1log.save()
 
             input2log = Inventory_Log(
-                Emp=form.cleaned_data.get('Employee'),
+                user_id=form.cleaned_data.get('user_id'),
                 Date=form.cleaned_data.get('End_time'),
                 supply=menupt2hg.input2,
                 supply_amt=menupt2hg.input2_amt * -1)
             input2log.save()
 
             input3log = Inventory_Log(
-                Emp=form.cleaned_data.get('Employee'),
+                user_id=form.cleaned_data.get('user_id'),
                 Date=form.cleaned_data.get('End_time'),
                 supply=menupt2hg.input3,
                 supply_amt=menupt2hg.input3_amt * -1)
@@ -219,7 +219,7 @@ class productioncreateviewend(CreateView):
             menupt1g.input3_amt = form.cleaned_data.get('Count') * menupt1g.input3_amt
 
             input1log = Inventory_Log(
-                Emp=form.cleaned_data.get('Employee'),
+                user_id=form.cleaned_data.get('user_id'),
                 Date=form.cleaned_data.get('End_time'),
                 supply=menupt1g.input1,
                 supply_amt=menupt1g.input1_amt * -1,
@@ -227,21 +227,21 @@ class productioncreateviewend(CreateView):
             input1log.save()
 
             input2log = Inventory_Log(
-                Emp=form.cleaned_data.get('Employee'),
+                user_id=form.cleaned_data.get('user_id'),
                 Date=form.cleaned_data.get('End_time'),
                 supply=menupt1g.input2,
                 supply_amt=menupt1g.input2_amt * -1)
             input2log.save()
 
             input3log = Inventory_Log(
-                Emp=form.cleaned_data.get('Employee'),
+                user_id=form.cleaned_data.get('user_id'),
                 Date=form.cleaned_data.get('End_time'),
                 supply=menupt1g.input3,
                 supply_amt=menupt1g.input3_amt * -1)
             input3log.save()
 
         obj1 = Inventory_Log(
-            Emp=form.cleaned_data.get('Employee'),
+            user_id=form.cleaned_data.get('user_id'),
             Date=form.cleaned_data.get('End_time'),
             supply=form.cleaned_data.get('Task').finished_product,
             supply_amt=form.cleaned_data.get('Count'),
@@ -250,7 +250,7 @@ class productioncreateviewend(CreateView):
         obj1.save()
 
         obj2 = Production_tracker(
-            Employee=form.cleaned_data.get('Employee'),
+            user_id=form.cleaned_data.get('user_id'),
             End_time=form.cleaned_data.get('End_time'),
             Task=form.cleaned_data.get('Task'),
             UID=form.cleaned_data.get('UID'),
@@ -273,14 +273,14 @@ class productioncreateview(CreateView):
             menu1gopr.canna_amount = form.cleaned_data.get('Count') * menu1gopr.canna_amount
 
             sgoprcone = Inventory_Log(
-            Emp=form.cleaned_data.get('Employee'),
+            user_id=form.cleaned_data.get('user_id'),
             Date=form.cleaned_data.get('End_time'),
             supply=menu1gopr.input1,
             supply_amt=menu1gopr.cone_amt * -1,)
             sgoprcone.save()
 
             sgoprcanna = Inventory_Log(
-            Emp=form.cleaned_data.get('Employee'),
+            user_id=form.cleaned_data.get('user_id'),
             Date=form.cleaned_data.get('End_time'),
             supply=menu1gopr.input2,
             supply_amt=menu1gopr.canna_amount * -1,
@@ -293,14 +293,14 @@ class productioncreateview(CreateView):
             menuhgopr.canna_amount = form.cleaned_data.get('Count') * menuhgopr.canna_amount
 
             hgoprcone = Inventory_Log(
-            Emp=form.cleaned_data.get('Employee'),
+            user_id=form.cleaned_data.get('user_id'),
             Date=form.cleaned_data.get('End_time'),
             supply=menuhgopr.input1,
             supply_amt=menuhgopr.cone_amt * -1)
             hgoprcone.save()
 
             hgoprcanna = Inventory_Log(
-            Emp=form.cleaned_data.get('Employee'),
+            user_id=form.cleaned_data.get('user_id'),
             Date=form.cleaned_data.get('End_time'),
             supply=menuhgopr.input2,
             supply_amt=menuhgopr.canna_amount * -1,
@@ -313,7 +313,7 @@ class productioncreateview(CreateView):
             menut.input1_amt = form.cleaned_data.get('Count') * menut.input1_amt
 
             twhgpr = Inventory_Log(
-            Emp=form.cleaned_data.get('Employee'),
+            user_id=form.cleaned_data.get('user_id'),
             Date=form.cleaned_data.get('End_time'),
             supply=menut.input1,
             supply_amt=menut.input1_amt * -1)
@@ -324,7 +324,7 @@ class productioncreateview(CreateView):
             menut1g.input1_amt = form.cleaned_data.get('Count') * menut1g.input1_amt
 
             twgpr = Inventory_Log(
-            Emp=form.cleaned_data.get('Employee'),
+            user_id=form.cleaned_data.get('user_id'),
             Date=form.cleaned_data.get('End_time'),
             supply=menut1g.input1,
             supply_amt=menut1g.input1_amt * -1,
@@ -339,7 +339,7 @@ class productioncreateview(CreateView):
             menuuwbhg.canna_sticker_amount = form.cleaned_data.get('Count') * menuuwbhg.canna_sticker_amount
 
             uwbprhg = Inventory_Log(
-            Emp=form.cleaned_data.get('Employee'),
+            user_id=form.cleaned_data.get('user_id'),
             Date=form.cleaned_data.get('End_time'),
             supply=menuuwbhg.input1,
             supply_amt=menuuwbhg.pre_roll_amt * -1,
@@ -347,21 +347,21 @@ class productioncreateview(CreateView):
             uwbprhg.save()
 
             uwbb = Inventory_Log(
-            Emp=form.cleaned_data.get('Employee'),
+            user_id=form.cleaned_data.get('user_id'),
             Date=form.cleaned_data.get('End_time'),
             supply=menuuwbhg.input2,
             supply_amt=menuuwbhg.box_amt * -1)
             uwbb.save()
 
             uwblbl = Inventory_Log(
-            Emp=form.cleaned_data.get('Employee'),
+            user_id=form.cleaned_data.get('user_id'),
             Date=form.cleaned_data.get('End_time'),
             supply=menuuwbhg.input3,
             supply_amt=menuuwbhg.label_amount * -1)
             uwblbl.save()
 
             uwbcannalbl = Inventory_Log(
-            Emp=form.cleaned_data.get('Employee'),
+            user_id=form.cleaned_data.get('user_id'),
             Date=form.cleaned_data.get('End_time'),
             supply=menuuwbhg.input4,
             supply_amt=menuuwbhg.label_amount * -1)
@@ -374,7 +374,7 @@ class productioncreateview(CreateView):
             menufb.input3_amt = form.cleaned_data.get('Count') * menufb.input3_amt
 
             input1log = Inventory_Log(
-            Emp=form.cleaned_data.get('Employee'),
+            user_id=form.cleaned_data.get('user_id'),
             Date=form.cleaned_data.get('End_time'),
             supply=menufb.input1,
             supply_amt=menufb.input1_amt * -1,
@@ -382,14 +382,14 @@ class productioncreateview(CreateView):
             input1log.save()
 
             input2log = Inventory_Log(
-            Emp=form.cleaned_data.get('Employee'),
+            user_id=form.cleaned_data.get('user_id'),
             Date=form.cleaned_data.get('End_time'),
             supply=menufb.input2,
             supply_amt=menufb.input2_amt * -1)
             input2log.save()
 
             input3log = Inventory_Log(
-            Emp=form.cleaned_data.get('Employee'),
+            user_id=form.cleaned_data.get('user_id'),
             Date=form.cleaned_data.get('End_time'),
             supply=menufb.input3,
             supply_amt=menufb.input3_amt * -1)
@@ -402,7 +402,7 @@ class productioncreateview(CreateView):
             menupt2hg.input3_amt = form.cleaned_data.get('Count') * menupt2hg.input3_amt
 
             input1log = Inventory_Log(
-            Emp=form.cleaned_data.get('Employee'),
+            user_id=form.cleaned_data.get('user_id'),
             Date=form.cleaned_data.get('End_time'),
             supply=menupt2hg.input1,
             supply_amt=menupt2hg.input1_amt * -1,
@@ -410,14 +410,14 @@ class productioncreateview(CreateView):
             input1log.save()
 
             input2log = Inventory_Log(
-            Emp=form.cleaned_data.get('Employee'),
+            user_id=form.cleaned_data.get('user_id'),
             Date=form.cleaned_data.get('End_time'),
             supply=menupt2hg.input2,
             supply_amt=menupt2hg.input2_amt * -1)
             input2log.save()
 
             input3log = Inventory_Log(
-            Emp=form.cleaned_data.get('Employee'),
+            user_id=form.cleaned_data.get('user_id'),
             Date=form.cleaned_data.get('End_time'),
             supply=menupt2hg.input3,
             supply_amt=menupt2hg.input3_amt * -1)
@@ -430,7 +430,7 @@ class productioncreateview(CreateView):
             menupt1g.input3_amt = form.cleaned_data.get('Count') * menupt1g.input3_amt
 
             input1log = Inventory_Log(
-            Emp=form.cleaned_data.get('Employee'),
+            user_id=form.cleaned_data.get('user_id'),
             Date=form.cleaned_data.get('End_time'),
             supply=menupt1g.input1,
             supply_amt=menupt1g.input1_amt * -1,
@@ -438,21 +438,21 @@ class productioncreateview(CreateView):
             input1log.save()
 
             input2log = Inventory_Log(
-            Emp=form.cleaned_data.get('Employee'),
+            user_id=form.cleaned_data.get('user_id'),
             Date=form.cleaned_data.get('End_time'),
             supply=menupt1g.input2,
             supply_amt=menupt1g.input2_amt * -1)
             input2log.save()
 
             input3log = Inventory_Log(
-            Emp=form.cleaned_data.get('Employee'),
+            user_id=form.cleaned_data.get('user_id'),
             Date=form.cleaned_data.get('End_time'),
             supply=menupt1g.input3,
             supply_amt=menupt1g.input3_amt * -1)
             input3log.save()
 
         obj1 = Inventory_Log(
-            Emp=form.cleaned_data.get('Employee'),
+            user_id=form.cleaned_data.get('user_id'),
             Date=form.cleaned_data.get('End_time'),
             supply=form.cleaned_data.get('Task').finished_product,
             supply_amt=form.cleaned_data.get('Count'),

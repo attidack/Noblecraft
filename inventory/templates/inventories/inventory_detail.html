@@ -3,7 +3,7 @@
 <table class="table table-hover">
     <tr>
         <th>ID</th>
-        <th>Employee</th>
+        <th>user</th>
         <th>Supply</th>
         <th>Supply Amount</th>
         <th>Date</th>
@@ -12,7 +12,7 @@
 
 <tr>
     <td>{{object.id}}</td>
-    <td><a href='{{ instance.get_absolute_url }}'> {{ object.Emp }}</a></td>
+    <td><a href='{{ instance.get_absolute_url }}'> {{ object.user_id }}</a></td>
     <td>{{ object.supply }}</td>
     <td>{{ object.supply_amt }}</td>
     <td>{{ object.Date }}</td>

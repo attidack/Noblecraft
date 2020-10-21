@@ -3,7 +3,7 @@
 <table class="table table-hover">
     <tr>
         <th>ID</th>
-        <th>Employee</th>
+        <th>user</th>
         <th>Start_time</th>
         <th>End_time</th>
         <th>Task</th>
@@ -13,7 +13,7 @@
 
 <tr>
     <td>{{ instance.id }}</td>
-    <td><a href='{{ instance.get_absolute_url }}'> {{ instance.Employee }}</a></td>
+    <td><a href='{{ instance.get_absolute_url }}'> {{ instance.user }}</a></td>
     <td>{{  instance.Start_time  }}</td>
     <td>{{  instance.End_time  }}</td>
     <td>{{  instance.Task  }}</td>

@@ -20,22 +20,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0159a6c5-3382-43b2-aa34-855b5c8bfead" name="Default Changelist" comment="update">
-      <change afterPath="$PROJECT_DIR$/production/templates/productions/production_end.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/production/templates/productions/production_start.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/register/templates/register/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/register/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/register/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/register/templates/registration/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Noblecraft/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Noblecraft/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Noblecraft/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Noblecraft/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventory/templates/inventories/inventory_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventories/inventory_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventory/templates/inventories/inventory_log.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventories/inventory_log.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/production/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/production/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/templates/productions/production_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/production/templates/productions/production_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/templates/productions/production_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/production/templates/productions/production_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/production/templates/productions/production_tracker.html" beforeDir="false" afterPath="$PROJECT_DIR$/production/templates/productions/production_tracker.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/production/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/register/templates/register/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/templates/register/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/register/templates/register/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +54,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="userfields" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GithubDefaultAccount">
@@ -174,7 +178,7 @@
       <workItem from="1602909927171" duration="46145000" />
       <workItem from="1603036534980" duration="100094000" />
       <workItem from="1603235635754" duration="4072000" />
-      <workItem from="1603240468573" duration="15930000" />
+      <workItem from="1603240468573" duration="24153000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1603077590305</created>
@@ -267,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603242712475</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="update">
+      <created>1603256721548</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1603256721548</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,22 +329,22 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="1102" y="410" key="Github.UntrackedFilesDialog/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603077416137" />
-    <state width="2517" height="402" key="GridCell.Tab.0.bottom" timestamp="1603255385677">
+    <state width="2517" height="402" key="GridCell.Tab.0.bottom" timestamp="1603264568139">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="402" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603255385677" />
-    <state width="2517" height="402" key="GridCell.Tab.0.center" timestamp="1603255385676">
+    <state width="2517" height="402" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603264568139" />
+    <state width="2517" height="402" key="GridCell.Tab.0.center" timestamp="1603264568139">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="402" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603255385676" />
-    <state width="2517" height="402" key="GridCell.Tab.0.left" timestamp="1603255385676">
+    <state width="2517" height="402" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603264568139" />
+    <state width="2517" height="402" key="GridCell.Tab.0.left" timestamp="1603264568139">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="402" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603255385676" />
-    <state width="2517" height="402" key="GridCell.Tab.0.right" timestamp="1603255385677">
+    <state width="2517" height="402" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603264568139" />
+    <state width="2517" height="402" key="GridCell.Tab.0.right" timestamp="1603264568139">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="402" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603255385677" />
+    <state width="2517" height="402" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603264568139" />
     <state width="2517" height="494" key="GridCell.Tab.1.bottom" timestamp="1603235622659">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
@@ -358,10 +369,10 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="781" y="350" key="SettingsEditor/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603241118426" />
-    <state x="872" y="425" key="Vcs.Push.Dialog.v2" timestamp="1603242715524">
+    <state x="872" y="425" key="Vcs.Push.Dialog.v2" timestamp="1603264728565">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="872" y="425" key="Vcs.Push.Dialog.v2/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603242715524" />
+    <state x="872" y="425" key="Vcs.Push.Dialog.v2/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603264728565" />
     <state x="-735" y="533" width="1173" height="715" key="dock-window-1" timestamp="1603060528499">
       <screen x="-1920" y="349" width="1920" height="1050" />
     </state>
@@ -374,6 +385,10 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="723" y="72" width="1936" height="770" key="dock-window-3/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603150148667" />
+    <state x="987" y="261" width="585" height="888" key="find.popup" timestamp="1603262843295">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="987" y="261" width="585" height="888" key="find.popup/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603262843295" />
     <state x="943" y="317" width="672" height="678" key="search.everywhere.popup" timestamp="1603243258135">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>

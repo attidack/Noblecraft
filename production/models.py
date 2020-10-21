@@ -1,7 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from datetime import datetime
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 
@@ -140,7 +140,7 @@ class Finished_Tube_1_gram_manuf(models.Model):
         return reverse("production:production-tracker", kwargs={"id": self.id})
 
 class Production_tracker(models.Model):
-    Employee = models.ForeignKey('Employees.Employee', on_delete=models.PROTECT)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     Start_time = models.DateTimeField(blank=True, null=True)
     End_time = models.DateTimeField(blank=True, null=True)
     Task = models.ForeignKey('Tasks', on_delete=models.PROTECT)
@@ -151,7 +151,7 @@ class Production_tracker(models.Model):
         return reverse("production:production-detail", kwargs={"id": self.id})
 
 class Production_tracker_start(models.Model):
-    Employee = models.ForeignKey('Employees.Employee', on_delete=models.PROTECT)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     Start_time = models.DateTimeField(default=datetime.now, blank=True)
     Task = models.ForeignKey('Tasks', on_delete=models.PROTECT)
     UID = models.IntegerField(default=0000)
@@ -161,7 +161,7 @@ class Production_tracker_start(models.Model):
 
 
 class Production_tracker_end(models.Model):
-    Employee = models.ForeignKey('Employees.Employee', on_delete=models.PROTECT)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     End_time = models.DateTimeField(default=datetime.now, blank=True)
     Task = models.ForeignKey('Tasks', on_delete=models.PROTECT)
     Count = models.IntegerField(default=0)

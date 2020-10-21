@@ -19,6 +19,7 @@ from pages.views import home_view, contact_view, about_view
 
 urlpatterns= [
     path('', home_view, name='home'),
+    path('', include('django.contrib.auth.urls')),
     path('contact/', contact_view),
     path('about/', about_view),
     path('register/', include('register.urls')),

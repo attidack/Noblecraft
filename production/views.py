@@ -41,7 +41,7 @@ class productioncreateviewstart(CreateView):
 
     def form_valid(self, form):
         obj1 = Production_tracker(
-            user=form.cleaned_data.get('user'),
+            user_id=form.cleaned_data.get('user_id'),
             Start_time=form.cleaned_data.get('Start_time'),
             Task=form.cleaned_data.get('Task'),
             UID=form.cleaned_data.get('UID'),

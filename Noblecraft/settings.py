@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'Noblecraft.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'nobleinventory',
+        'NAME': 'noblecraftinv',
         'USER': 'postgres',
         'PASSWORD': 'w33disg00d!',
         'HOST': '127.0.0.1',

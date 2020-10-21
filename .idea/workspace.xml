@@ -22,7 +22,6 @@
     <list default="true" id="0159a6c5-3382-43b2-aa34-855b5c8bfead" name="Default Changelist" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Noblecraft/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Noblecraft/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +164,8 @@
       <workItem from="1602909927171" duration="46145000" />
       <workItem from="1603036534980" duration="100094000" />
       <workItem from="1603235635754" duration="4072000" />
-      <workItem from="1603240468573" duration="26046000" />
+      <workItem from="1603240468573" duration="29149000" />
+      <workItem from="1603271601022" duration="661000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1603077590305</created>
@@ -279,7 +279,21 @@
       <option name="project" value="LOCAL" />
       <updated>1603265664885</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="update">
+      <created>1603267073510</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1603267073510</updated>
+    </task>
+    <task id="LOCAL-00018" summary="update">
+      <created>1603267161126</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1603267161126</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,6 +309,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
@@ -330,22 +345,22 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="1102" y="410" key="Github.UntrackedFilesDialog/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603077416137" />
-    <state width="2517" height="402" key="GridCell.Tab.0.bottom" timestamp="1603266277309">
+    <state width="2517" height="402" key="GridCell.Tab.0.bottom" timestamp="1603270598936">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="402" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603266277309" />
-    <state width="2517" height="402" key="GridCell.Tab.0.center" timestamp="1603266277309">
+    <state width="2517" height="402" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603270598936" />
+    <state width="2517" height="402" key="GridCell.Tab.0.center" timestamp="1603270598936">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="402" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603266277309" />
-    <state width="2517" height="402" key="GridCell.Tab.0.left" timestamp="1603266277309">
+    <state width="2517" height="402" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603270598936" />
+    <state width="2517" height="402" key="GridCell.Tab.0.left" timestamp="1603270598935">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="402" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603266277309" />
-    <state width="2517" height="402" key="GridCell.Tab.0.right" timestamp="1603266277309">
+    <state width="2517" height="402" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603270598935" />
+    <state width="2517" height="402" key="GridCell.Tab.0.right" timestamp="1603270598936">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="402" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603266277309" />
+    <state width="2517" height="402" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603270598936" />
     <state width="2517" height="494" key="GridCell.Tab.1.bottom" timestamp="1603235622659">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>

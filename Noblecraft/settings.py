@@ -82,12 +82,12 @@ WSGI_APPLICATION = 'Noblecraft.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'noblecraftinv',
-        'USER': 'postgres',
-        'PASSWORD': 'w33disg00d!',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'defaultdb',
+        'USER': 'doadmin',
+        'PASSWORD': 'cq004pu1il9rclv9',
+        'HOST': 'nobelcraftdbcluster-do-user-8200947-0.b.db.ondigitalocean.com',
+        'PORT': '25060',
     }
 }
 

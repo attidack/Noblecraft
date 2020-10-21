@@ -1,81 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:github1" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="0159a6c5-3382-43b2-aa34-855b5c8bfead" name="Default Changelist" comment="update">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/production/templates/productions/production_end.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/production/templates/productions/production_start.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/register/templates/register/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/register/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Employees/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Employees/migrations/0002_employee.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Employees/migrations/0003_delete_employee_tracker.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Employees/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Employees/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Noblecraft/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Noblecraft/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Noblecraft/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Noblecraft/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/register/templates/registration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/forms.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/migrations/0002_auto_20201017_2006.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/articles/article_create.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/articles/article_delete.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/articles/article_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/articles/article_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/migrations/0002_auto_20201018_1405.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/migrations/0003_auto_20201018_1910.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/migrations/0004_auto_20201019_1151.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/migrations/0005_auto_20201019_1554.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/migrations/0006_inventory_log_uid.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory/templates/inventories/inventory_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventories/inventory_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventory/templates/inventories/inventory_log.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventories/inventory_log.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/migrations/0002_auto_20201018_1405.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/migrations/0003_tasks_finished_product.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/migrations/0004_auto_20201019_1306.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/migrations/0005_auto_20201019_1932.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/migrations/0006_pre_roll_1g_manuf_input1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/migrations/0007_auto_20201019_2143.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/migrations/0008_auto_20201019_2151.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/migrations/0009_auto_20201019_2153.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/migrations/0010_twisting_preroll_half_manuf.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/migrations/0011_auto_20201020_1026.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/migrations/0012_auto_20201020_1030.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/migrations/0013_twisting_preroll_1g_manuf.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/migrations/0014_production_tracker_uid.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/migrations/0015_auto_20201020_1144.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/migrations/0016_auto_20201020_1146.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/migrations/0017_auto_20201020_1226.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/migrations/0018_auto_20201020_1230.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/migrations/0019_auto_20201020_1243.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/production/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/templates/productions/production_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/production/templates/productions/production_create.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/production/templates/productions/production_tracker.html" beforeDir="false" afterPath="$PROJECT_DIR$/production/templates/productions/production_tracker.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/production/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/forms.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0002_remove_product_featured.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0003_auto_20201016_2214.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0004_auto_20201016_2247.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0005_remove_product_featured.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0006_product_featured.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0007_auto_20201017_1306.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/templates/products/product_create.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/templates/products/product_delete.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/templates/products/product_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/templates/products/product_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/register/templates/register/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -116,6 +76,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Noblecraft/settings.py" />
     <property name="settings.editor.selected.configurable" value="consents" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projects\noblecraft\Noblecraft\register\templates\register" />
+    </key>
   </component>
   <component name="RunManager" selected="Django Server.noblecraft">
     <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -209,7 +174,7 @@
       <workItem from="1602909927171" duration="46145000" />
       <workItem from="1603036534980" duration="100094000" />
       <workItem from="1603235635754" duration="4072000" />
-      <workItem from="1603240468573" duration="2211000" />
+      <workItem from="1603240468573" duration="15930000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1603077590305</created>
@@ -295,11 +260,29 @@
       <option name="project" value="LOCAL" />
       <updated>1603226232913</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="update">
+      <created>1603242712475</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1603242712475</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
@@ -311,10 +294,10 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="872" y="363" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603240591667" />
-    <state x="1543" y="513" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603131486921">
+    <state x="1543" y="513" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603249193425">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="1543" y="513" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603131486921" />
+    <state x="1543" y="513" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603249193425" />
     <state x="92" y="92" width="2376" height="1226" key="DiffContextDialog" timestamp="1603077594101">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
@@ -335,22 +318,22 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="1102" y="410" key="Github.UntrackedFilesDialog/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603077416137" />
-    <state width="2517" height="402" key="GridCell.Tab.0.bottom" timestamp="1603242040874">
+    <state width="2517" height="402" key="GridCell.Tab.0.bottom" timestamp="1603255385677">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="402" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603242040874" />
-    <state width="2517" height="402" key="GridCell.Tab.0.center" timestamp="1603242040872">
+    <state width="2517" height="402" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603255385677" />
+    <state width="2517" height="402" key="GridCell.Tab.0.center" timestamp="1603255385676">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="402" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603242040872" />
-    <state width="2517" height="402" key="GridCell.Tab.0.left" timestamp="1603242040871">
+    <state width="2517" height="402" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603255385676" />
+    <state width="2517" height="402" key="GridCell.Tab.0.left" timestamp="1603255385676">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="402" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603242040871" />
-    <state width="2517" height="402" key="GridCell.Tab.0.right" timestamp="1603242040873">
+    <state width="2517" height="402" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603255385676" />
+    <state width="2517" height="402" key="GridCell.Tab.0.right" timestamp="1603255385677">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="402" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603242040873" />
+    <state width="2517" height="402" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603255385677" />
     <state width="2517" height="494" key="GridCell.Tab.1.bottom" timestamp="1603235622659">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
@@ -375,10 +358,10 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="781" y="350" key="SettingsEditor/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603241118426" />
-    <state x="872" y="425" key="Vcs.Push.Dialog.v2" timestamp="1603226238836">
+    <state x="872" y="425" key="Vcs.Push.Dialog.v2" timestamp="1603242715524">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="872" y="425" key="Vcs.Push.Dialog.v2/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603226238836" />
+    <state x="872" y="425" key="Vcs.Push.Dialog.v2/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603242715524" />
     <state x="-735" y="533" width="1173" height="715" key="dock-window-1" timestamp="1603060528499">
       <screen x="-1920" y="349" width="1920" height="1050" />
     </state>
@@ -391,10 +374,10 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="723" y="72" width="1936" height="770" key="dock-window-3/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603150148667" />
-    <state x="943" y="317" width="672" height="678" key="search.everywhere.popup" timestamp="1603237843772">
+    <state x="943" y="317" width="672" height="678" key="search.everywhere.popup" timestamp="1603243258135">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="943" y="317" width="672" height="678" key="search.everywhere.popup/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603237843772" />
+    <state x="943" y="317" width="672" height="678" key="search.everywhere.popup/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603243258135" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

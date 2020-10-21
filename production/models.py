@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from datetime import datetime
 
 # Create your models here.
 
@@ -140,11 +141,32 @@ class Finished_Tube_1_gram_manuf(models.Model):
 
 class Production_tracker(models.Model):
     Employee = models.ForeignKey('Employees.Employee', on_delete=models.PROTECT)
-    Start_time = models.DateTimeField()
-    End_time = models.DateTimeField()
+    Start_time = models.DateTimeField(blank=True, null=True)
+    End_time = models.DateTimeField(blank=True, null=True)
     Task = models.ForeignKey('Tasks', on_delete=models.PROTECT)
-    Count = models.IntegerField()
-    UID = models.IntegerField()
+    Count = models.IntegerField(default=0)
+    UID = models.IntegerField(default=0000, blank=True, null=True)
 
     def get_absolute_url(self):
         return reverse("production:production-detail", kwargs={"id": self.id})
+
+class Production_tracker_start(models.Model):
+    Employee = models.ForeignKey('Employees.Employee', on_delete=models.PROTECT)
+    Start_time = models.DateTimeField(default=datetime.now, blank=True)
+    Task = models.ForeignKey('Tasks', on_delete=models.PROTECT)
+    UID = models.IntegerField(default=0000)
+
+    def get_absolute_url(self):
+        return reverse("production:production-end")
+
+
+class Production_tracker_end(models.Model):
+    Employee = models.ForeignKey('Employees.Employee', on_delete=models.PROTECT)
+    End_time = models.DateTimeField(default=datetime.now, blank=True)
+    Task = models.ForeignKey('Tasks', on_delete=models.PROTECT)
+    Count = models.IntegerField(default=0)
+    UID = models.IntegerField(default=0000)
+
+
+    def get_absolute_url(self):
+        return reverse("production:production-start")

@@ -5,7 +5,12 @@
 {% block content %}
 
 <form method='post'>{% csrf_token %}
+    <div>
+        <div class="input-group-text">
     {{ form.as_ul }}
-    <input type='submit' value="Save" />
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success" value="Save">Save</button>
+
 </form>
 {% endblock %}

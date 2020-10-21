@@ -21,6 +21,7 @@ urlpatterns= [
     path('', home_view, name='home'),
     path('contact/', contact_view),
     path('about/', about_view),
+    path('register/', include('register.urls')),
     path('production/', include('production.urls')),
     path('inventory/', include('inventory.urls')),
     path('admin/', admin.site.urls)

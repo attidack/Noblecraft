@@ -1,10 +1,10 @@
 from django.urls import path
-from register import views as v
+from .views import register
 
 app_name ='register'
 urlpatterns = [
 
-    path('', v.register, name='register'),
+    path('', register, name='register'),
 
 
 ]

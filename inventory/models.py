@@ -8,7 +8,7 @@ class Inventory_Log(models.Model):
     supply = models.CharField(max_length=120)
     supply_amt = models.IntegerField()
     per_box = models.IntegerField(null=True, blank=True)
-    Date = models.DateTimeField()
+    Date = models.DateTimeField(auto_now=True)
     UID = models.IntegerField(null=True, blank=True)
 
 

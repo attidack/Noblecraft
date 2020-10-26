@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404, reverse
-
+from datetime import datetime
 from inventory.models import Inventory_Log
-from .forms import Productionform, Productionformstart, Productionformend
+from .forms import Productionform, ProductionFormStart, ProductionFormEnd
+
 from .models import (
     Production_tracker,
     Pre_roll_1g_manuf,
@@ -12,8 +13,7 @@ from .models import (
     Finished_Box_manuf,
     Finished_Tube_2half_grams_manuf,
     Finished_Tube_1_gram_manuf,
-    Production_tracker_start,
-    Production_tracker_end
+
 
 )
 from django.views.generic import (
@@ -25,8 +25,9 @@ from django.views.generic import (
 )
 
 
-class productiontrackerview(ListView):
+class ProductionTrackerView(ListView):
     template_name = 'productions/production_tracker.html'
+
     def get(self, request, *args, **kwargs):
         queryset = Production_tracker.objects.all()
         context = {
@@ -34,421 +35,416 @@ class productiontrackerview(ListView):
         }
         return render(request, self.template_name, context)
 
-class productioncreateviewstart(CreateView):
+
+class ProductionCreateViewStart(CreateView):
     template_name = 'productions/production_start.html'
-    form_class = Productionformstart
-    queryset = Production_tracker_start.objects.all()
+    form_class = ProductionFormStart
+    queryset = Production_tracker.objects.all()
 
     def form_valid(self, form):
-        obj1 = Production_tracker(
-            user_id=form.cleaned_data.get('user_id'),
-            Start_time=form.cleaned_data.get('Start_time'),
-            Task=form.cleaned_data.get('Task'),
-            UID=form.cleaned_data.get('UID'),
-        )
+        form.instance.user_id = self.request.user
+        form.instance.Start_time = datetime.now()
+        return super(ProductionCreateViewStart, self).form_valid(form)
 
-        obj1.save()
-        return super(productioncreateviewstart, self).form_valid(form)
+    def get_success_url(self):
+        return reverse("production:production-end", kwargs={"id": self.object.id})
 
-class productioncreateviewend(CreateView):
+
+class ProductionEndView(UpdateView):
     template_name = 'productions/production_end.html'
-    form_class = Productionformend
-    queryset = Production_tracker_end.objects.all()
+    form_class = ProductionFormEnd
+    queryset = Production_tracker.objects.all()
+
+    def get_object(self):
+        id_ = self.kwargs.get("id")
+        return get_object_or_404(Production_tracker, id=id_)
 
     def form_valid(self, form):
-        if form.cleaned_data.get('Task').finished_product == '1g_open_pre_roll':
-            menu1gopr = Pre_roll_1g_manuf.objects.first()
-            menu1gopr.cone_amt = form.cleaned_data.get('Count') * menu1gopr.cone_amt
-            menu1gopr.canna_amount = form.cleaned_data.get('Count') * menu1gopr.canna_amount
-
-            sgoprcone = Inventory_Log(
-                user_id=form.cleaned_data.get('user_id'),
-                Date=form.cleaned_data.get('End_time'),
-                supply=menu1gopr.input1,
-                supply_amt=menu1gopr.cone_amt * -1, )
-            sgoprcone.save()
-
-            sgoprcanna = Inventory_Log(
-                user_id=form.cleaned_data.get('user_id'),
-                Date=form.cleaned_data.get('End_time'),
-                supply=menu1gopr.input2,
-                supply_amt=menu1gopr.canna_amount * -1,
-                UID=form.cleaned_data.get('UID'))
-            sgoprcanna.save()
-
-        elif form.cleaned_data.get('Task').finished_product == 'halfg_open_pre_roll':
-            menuhgopr = Preroll_half_manuf.objects.first()
-            menuhgopr.cone_amt = form.cleaned_data.get('Count') * menuhgopr.cone_amt
-            menuhgopr.canna_amount = form.cleaned_data.get('Count') * menuhgopr.canna_amount
-
-            hgoprcone = Inventory_Log(
-                user_id=form.cleaned_data.get('user_id'),
-                Date=form.cleaned_data.get('End_time'),
-                supply=menuhgopr.input1,
-                supply_amt=menuhgopr.cone_amt * -1)
-            hgoprcone.save()
-
-            hgoprcanna = Inventory_Log(
-                user_id=form.cleaned_data.get('user_id'),
-                Date=form.cleaned_data.get('End_time'),
-                supply=menuhgopr.input2,
-                supply_amt=menuhgopr.canna_amount * -1,
-                UID=form.cleaned_data.get('UID'))
-            hgoprcanna.save()
-
-        elif form.cleaned_data.get('Task').finished_product == 'halfg_pre_roll':
-            menut = Twisting_Preroll_half_manuf.objects.first()
-            menut.pre_roll_amt = form.cleaned_data.get('Count') * menut.pre_roll_amt
-            menut.input1_amt = form.cleaned_data.get('Count') * menut.input1_amt
-
-            twhgpr = Inventory_Log(
-                user_id=form.cleaned_data.get('user_id'),
-                Date=form.cleaned_data.get('End_time'),
-                supply=menut.input1,
-                supply_amt=menut.input1_amt * -1)
-            twhgpr.save()
-
-        elif form.cleaned_data.get('Task').finished_product == '1g_pre_roll':
-            menut1g = Twisting_Preroll_1g_manuf.objects.first()
-            menut1g.input1_amt = form.cleaned_data.get('Count') * menut1g.input1_amt
-
-            twgpr = Inventory_Log(
-                user_id=form.cleaned_data.get('user_id'),
-                Date=form.cleaned_data.get('End_time'),
-                supply=menut1g.input1,
-                supply_amt=menut1g.input1_amt * -1,
-                UID=form.cleaned_data.get('UID'))
-            twgpr.save()
-
-        elif form.cleaned_data.get('Task').finished_product == 'Unwrapped_box':
-            menuuwbhg = Unwrapped_Box_manuf.objects.first()
-            menuuwbhg.pre_roll_amt = form.cleaned_data.get('Count') * menuuwbhg.pre_roll_amt
-            menuuwbhg.box_amt = form.cleaned_data.get('Count') * menuuwbhg.box_amt
-            menuuwbhg.label_amount = form.cleaned_data.get('Count') * menuuwbhg.label_amount
-            menuuwbhg.canna_sticker_amount = form.cleaned_data.get('Count') * menuuwbhg.canna_sticker_amount
-
-            uwbprhg = Inventory_Log(
-                user_id=form.cleaned_data.get('user_id'),
-                Date=form.cleaned_data.get('End_time'),
-                supply=menuuwbhg.input1,
-                supply_amt=menuuwbhg.pre_roll_amt * -1,
-                UID=form.cleaned_data.get('UID'))
-            uwbprhg.save()
-
-            uwbb = Inventory_Log(
-                user_id=form.cleaned_data.get('user_id'),
-                Date=form.cleaned_data.get('End_time'),
-                supply=menuuwbhg.input2,
-                supply_amt=menuuwbhg.box_amt * -1)
-            uwbb.save()
-
-            uwblbl = Inventory_Log(
-                user_id=form.cleaned_data.get('user_id'),
-                Date=form.cleaned_data.get('End_time'),
-                supply=menuuwbhg.input3,
-                supply_amt=menuuwbhg.label_amount * -1)
-            uwblbl.save()
-
-            uwbcannalbl = Inventory_Log(
-                user_id=form.cleaned_data.get('user_id'),
-                Date=form.cleaned_data.get('End_time'),
-                supply=menuuwbhg.input4,
-                supply_amt=menuuwbhg.label_amount * -1)
-            uwbcannalbl.save()
-
-        elif form.cleaned_data.get('Task').finished_product == 'Finished_Box':
-            menufb = Finished_Box_manuf.objects.first()
-            menufb.input1_amt = form.cleaned_data.get('Count') * menufb.input1_amt
-            menufb.input2_amt = form.cleaned_data.get('Count') * menufb.input2_amt
-            menufb.input3_amt = form.cleaned_data.get('Count') * menufb.input3_amt
+        form.instance.End_time = datetime.now()
+        if self.object.Task.finished_product == '1g_open_pre_roll':
+            menu1 = Pre_roll_1g_manuf.objects.first()
+            menu1.cone_amt = form.cleaned_data.get('Count') * menu1.cone_amt
+            menu1.canna_amount = form.cleaned_data.get('Count') * menu1.canna_amount
 
             input1log = Inventory_Log(
-                user_id=form.cleaned_data.get('user_id'),
+                user_id=self.request.user,
                 Date=form.cleaned_data.get('End_time'),
-                supply=menufb.input1,
-                supply_amt=menufb.input1_amt * -1,
+                supply=menu1.input1,
+                supply_amt=menu1.cone_amt * -1,)
+            input1log.save()
+
+            input2log = Inventory_Log(
+                user_id=self.request.user,
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu1.input2,
+                supply_amt=menu1.canna_amount * -1,
+                UID=form.cleaned_data.get('UID'))
+            input2log.save()
+
+        elif self.object.Task.finished_product == 'halfg_open_pre_roll':
+            menu2 = Preroll_half_manuf.objects.first()
+            menu2.cone_amt = form.cleaned_data.get('Count') * menu2.cone_amt
+            menu2.canna_amount = form.cleaned_data.get('Count') * menu2.canna_amount
+
+            input1log = Inventory_Log(
+                user_id=self.request.user,
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu2.input1,
+                supply_amt=menu2.cone_amt * -1)
+            input1log.save()
+
+            input2log = Inventory_Log(
+                user_id=self.request.user,
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu2.input2,
+                supply_amt=menu2.canna_amount * -1,
+                UID=form.cleaned_data.get('UID'))
+            input2log.save()
+
+        elif self.object.Task.finished_product == 'halfg_pre_roll':
+            menu3 = Twisting_Preroll_half_manuf.objects.first()
+            menu3.pre_roll_amt = form.cleaned_data.get('Count') * menu3.pre_roll_amt
+            menu3.input1_amt = form.cleaned_data.get('Count') * menu3.input1_amt
+
+            input1log = Inventory_Log(
+                user_id=self.request.user,
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu3.input1,
+                supply_amt=menu3.input1_amt * -1)
+            input1log.save()
+
+        elif self.object.Task.finished_product == '1g_pre_roll':
+            menu4 = Twisting_Preroll_1g_manuf.objects.first()
+            menu4.input1_amt = form.cleaned_data.get('Count') * menu4.input1_amt
+
+            input1log = Inventory_Log(
+                user_id=self.request.user,
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu4.input1,
+                supply_amt=menu4.input1_amt * -1,
+                UID=form.cleaned_data.get('UID'))
+            input1log.save()
+
+        elif self.object.Task.finished_product == 'Unwrapped_box':
+            menu5 = Unwrapped_Box_manuf.objects.first()
+            menu5.pre_roll_amt = form.cleaned_data.get('Count') * menu5.pre_roll_amt
+            menu5.box_amt = form.cleaned_data.get('Count') * menu5.box_amt
+            menu5.label_amount = form.cleaned_data.get('Count') * menu5.label_amount
+            menu5.canna_sticker_amount = form.cleaned_data.get('Count') * menu5.canna_sticker_amount
+
+            input1log = Inventory_Log(
+                user_id=self.request.user,
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu5.input1,
+                supply_amt=menu5.pre_roll_amt * -1,
                 UID=form.cleaned_data.get('UID'))
             input1log.save()
 
             input2log = Inventory_Log(
-                user_id=form.cleaned_data.get('user_id'),
+                user_id=self.request.user,
                 Date=form.cleaned_data.get('End_time'),
-                supply=menufb.input2,
-                supply_amt=menufb.input2_amt * -1)
+                supply=menu5.input2,
+                supply_amt=menu5.box_amt * -1)
             input2log.save()
 
             input3log = Inventory_Log(
-                user_id=form.cleaned_data.get('user_id'),
+                user_id=self.request.user,
                 Date=form.cleaned_data.get('End_time'),
-                supply=menufb.input3,
-                supply_amt=menufb.input3_amt * -1)
+                supply=menu5.input3,
+                supply_amt=menu5.label_amount * -1)
             input3log.save()
 
-        elif form.cleaned_data.get('Task').finished_product == 'Preroll_tube_2_half_grams':
-            menupt2hg = Finished_Tube_2half_grams_manuf.objects.first()
-            menupt2hg.input1_amt = form.cleaned_data.get('Count') * menupt2hg.input1_amt
-            menupt2hg.input2_amt = form.cleaned_data.get('Count') * menupt2hg.input2_amt
-            menupt2hg.input3_amt = form.cleaned_data.get('Count') * menupt2hg.input3_amt
+            input4log = Inventory_Log(
+                user_id=self.request.user,
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu5.input4,
+                supply_amt=menu5.label_amount * -1)
+            input4log.save()
+
+        elif self.object.Task.finished_product == 'Finished_Box':
+            menu6 = Finished_Box_manuf.objects.first()
+            menu6.input1_amt = form.cleaned_data.get('Count') * menu6.input1_amt
+            menu6.input2_amt = form.cleaned_data.get('Count') * menu6.input2_amt
+            menu6.input3_amt = form.cleaned_data.get('Count') * menu6.input3_amt
 
             input1log = Inventory_Log(
-                user_id=form.cleaned_data.get('user_id'),
+                user_id=self.request.user,
                 Date=form.cleaned_data.get('End_time'),
-                supply=menupt2hg.input1,
-                supply_amt=menupt2hg.input1_amt * -1,
+                supply=menu6.input1,
+                supply_amt=menu6.input1_amt * -1,
                 UID=form.cleaned_data.get('UID'))
             input1log.save()
 
             input2log = Inventory_Log(
-                user_id=form.cleaned_data.get('user_id'),
+                user_id=self.request.user,
                 Date=form.cleaned_data.get('End_time'),
-                supply=menupt2hg.input2,
-                supply_amt=menupt2hg.input2_amt * -1)
+                supply=menu6.input2,
+                supply_amt=menu6.input2_amt * -1)
             input2log.save()
 
             input3log = Inventory_Log(
-                user_id=form.cleaned_data.get('user_id'),
+                user_id=self.request.user,
                 Date=form.cleaned_data.get('End_time'),
-                supply=menupt2hg.input3,
-                supply_amt=menupt2hg.input3_amt * -1)
+                supply=menu6.input3,
+                supply_amt=menu6.input3_amt * -1)
             input3log.save()
 
-        elif form.cleaned_data.get('Task').finished_product == 'Preroll_tube_1_gram':
-            menupt1g = Finished_Tube_1_gram_manuf.objects.first()
-            menupt1g.input1_amt = form.cleaned_data.get('Count') * menupt1g.input1_amt
-            menupt1g.input2_amt = form.cleaned_data.get('Count') * menupt1g.input2_amt
-            menupt1g.input3_amt = form.cleaned_data.get('Count') * menupt1g.input3_amt
+        elif self.object.Task.finished_product == 'Preroll_tube_2_half_grams':
+            menu7 = Finished_Tube_2half_grams_manuf.objects.first()
+            menu7.input1_amt = form.cleaned_data.get('Count') * menu7.input1_amt
+            menu7.input2_amt = form.cleaned_data.get('Count') * menu7.input2_amt
+            menu7.input3_amt = form.cleaned_data.get('Count') * menu7.input3_amt
 
             input1log = Inventory_Log(
-                user_id=form.cleaned_data.get('user_id'),
+                user_id=self.request.user,
                 Date=form.cleaned_data.get('End_time'),
-                supply=menupt1g.input1,
-                supply_amt=menupt1g.input1_amt * -1,
+                supply=menu7.input1,
+                supply_amt=menu7.input1_amt * -1,
                 UID=form.cleaned_data.get('UID'))
             input1log.save()
 
             input2log = Inventory_Log(
-                user_id=form.cleaned_data.get('user_id'),
+                user_id=self.request.user,
                 Date=form.cleaned_data.get('End_time'),
-                supply=menupt1g.input2,
-                supply_amt=menupt1g.input2_amt * -1)
+                supply=menu7.input2,
+                supply_amt=menu7.input2_amt * -1)
             input2log.save()
 
             input3log = Inventory_Log(
-                user_id=form.cleaned_data.get('user_id'),
+                user_id=self.request.user,
                 Date=form.cleaned_data.get('End_time'),
-                supply=menupt1g.input3,
-                supply_amt=menupt1g.input3_amt * -1)
+                supply=menu7.input3,
+                supply_amt=menu7.input3_amt * -1)
+            input3log.save()
+
+        elif self.object.Task.finished_product == 'Preroll_tube_1_gram':
+            menu8 = Finished_Tube_1_gram_manuf.objects.first()
+            menu8.input1_amt = form.cleaned_data.get('Count') * menu8.input1_amt
+            menu8.input2_amt = form.cleaned_data.get('Count') * menu8.input2_amt
+            menu8.input3_amt = form.cleaned_data.get('Count') * menu8.input3_amt
+
+            input1log = Inventory_Log(
+                user_id=self.request.user,
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu8.input1,
+                supply_amt=menu8.input1_amt * -1,
+                UID=form.cleaned_data.get('UID'))
+            input1log.save()
+
+            input2log = Inventory_Log(
+                user_id=self.request.user,
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu8.input2,
+                supply_amt=menu8.input2_amt * -1)
+            input2log.save()
+
+            input3log = Inventory_Log(
+                user_id=self.request.user,
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu8.input3,
+                supply_amt=menu8.input3_amt * -1)
             input3log.save()
 
         obj1 = Inventory_Log(
-            user_id=form.cleaned_data.get('user_id'),
+            user_id=self.request.user,
             Date=form.cleaned_data.get('End_time'),
-            supply=form.cleaned_data.get('Task').finished_product,
+            supply=self.object.Task.finished_product,
             supply_amt=form.cleaned_data.get('Count'),
             UID=form.cleaned_data.get('UID')
         )
+
         obj1.save()
-
-        obj2 = Production_tracker(
-            user_id=form.cleaned_data.get('user_id'),
-            End_time=form.cleaned_data.get('End_time'),
-            Task=form.cleaned_data.get('Task'),
-            UID=form.cleaned_data.get('UID'),
-            Count=form.cleaned_data.get('Count')
-            )
-
-        obj2.save()
-        return super(productioncreateviewend, self).form_valid(form)
+        return super().form_valid(form)
 
 
-class productioncreateview(CreateView):
+class ProductionCreateView(CreateView):
     template_name = 'productions/production_create.html'
     form_class = Productionform
     queryset = Production_tracker.objects.all()
 
     def form_valid(self, form):
         if form.cleaned_data.get('Task').finished_product == '1g_open_pre_roll':
-            menu1gopr = Pre_roll_1g_manuf.objects.first()
-            menu1gopr.cone_amt = form.cleaned_data.get('Count') * menu1gopr.cone_amt
-            menu1gopr.canna_amount = form.cleaned_data.get('Count') * menu1gopr.canna_amount
-
-            sgoprcone = Inventory_Log(
-            user_id=form.cleaned_data.get('user_id'),
-            Date=form.cleaned_data.get('End_time'),
-            supply=menu1gopr.input1,
-            supply_amt=menu1gopr.cone_amt * -1,)
-            sgoprcone.save()
-
-            sgoprcanna = Inventory_Log(
-            user_id=form.cleaned_data.get('user_id'),
-            Date=form.cleaned_data.get('End_time'),
-            supply=menu1gopr.input2,
-            supply_amt=menu1gopr.canna_amount * -1,
-            UID=form.cleaned_data.get('UID'))
-            sgoprcanna.save()
-
-        elif form.cleaned_data.get('Task').finished_product == 'halfg_open_pre_roll':
-            menuhgopr = Preroll_half_manuf.objects.first()
-            menuhgopr.cone_amt = form.cleaned_data.get('Count') * menuhgopr.cone_amt
-            menuhgopr.canna_amount = form.cleaned_data.get('Count') * menuhgopr.canna_amount
-
-            hgoprcone = Inventory_Log(
-            user_id=form.cleaned_data.get('user_id'),
-            Date=form.cleaned_data.get('End_time'),
-            supply=menuhgopr.input1,
-            supply_amt=menuhgopr.cone_amt * -1)
-            hgoprcone.save()
-
-            hgoprcanna = Inventory_Log(
-            user_id=form.cleaned_data.get('user_id'),
-            Date=form.cleaned_data.get('End_time'),
-            supply=menuhgopr.input2,
-            supply_amt=menuhgopr.canna_amount * -1,
-            UID=form.cleaned_data.get('UID'))
-            hgoprcanna.save()
-
-        elif form.cleaned_data.get('Task').finished_product == 'halfg_pre_roll':
-            menut = Twisting_Preroll_half_manuf.objects.first()
-            menut.pre_roll_amt = form.cleaned_data.get('Count') * menut.pre_roll_amt
-            menut.input1_amt = form.cleaned_data.get('Count') * menut.input1_amt
-
-            twhgpr = Inventory_Log(
-            user_id=form.cleaned_data.get('user_id'),
-            Date=form.cleaned_data.get('End_time'),
-            supply=menut.input1,
-            supply_amt=menut.input1_amt * -1)
-            twhgpr.save()
-
-        elif form.cleaned_data.get('Task').finished_product == '1g_pre_roll':
-            menut1g = Twisting_Preroll_1g_manuf.objects.first()
-            menut1g.input1_amt = form.cleaned_data.get('Count') * menut1g.input1_amt
-
-            twgpr = Inventory_Log(
-            user_id=form.cleaned_data.get('user_id'),
-            Date=form.cleaned_data.get('End_time'),
-            supply=menut1g.input1,
-            supply_amt=menut1g.input1_amt * -1,
-            UID=form.cleaned_data.get('UID'))
-            twgpr.save()
-
-        elif form.cleaned_data.get('Task').finished_product == 'Unwrapped_box':
-            menuuwbhg = Unwrapped_Box_manuf.objects.first()
-            menuuwbhg.pre_roll_amt = form.cleaned_data.get('Count') * menuuwbhg.pre_roll_amt
-            menuuwbhg.box_amt = form.cleaned_data.get('Count') * menuuwbhg.box_amt
-            menuuwbhg.label_amount = form.cleaned_data.get('Count') * menuuwbhg.label_amount
-            menuuwbhg.canna_sticker_amount = form.cleaned_data.get('Count') * menuuwbhg.canna_sticker_amount
-
-            uwbprhg = Inventory_Log(
-            user_id=form.cleaned_data.get('user_id'),
-            Date=form.cleaned_data.get('End_time'),
-            supply=menuuwbhg.input1,
-            supply_amt=menuuwbhg.pre_roll_amt * -1,
-            UID=form.cleaned_data.get('UID'))
-            uwbprhg.save()
-
-            uwbb = Inventory_Log(
-            user_id=form.cleaned_data.get('user_id'),
-            Date=form.cleaned_data.get('End_time'),
-            supply=menuuwbhg.input2,
-            supply_amt=menuuwbhg.box_amt * -1)
-            uwbb.save()
-
-            uwblbl = Inventory_Log(
-            user_id=form.cleaned_data.get('user_id'),
-            Date=form.cleaned_data.get('End_time'),
-            supply=menuuwbhg.input3,
-            supply_amt=menuuwbhg.label_amount * -1)
-            uwblbl.save()
-
-            uwbcannalbl = Inventory_Log(
-            user_id=form.cleaned_data.get('user_id'),
-            Date=form.cleaned_data.get('End_time'),
-            supply=menuuwbhg.input4,
-            supply_amt=menuuwbhg.label_amount * -1)
-            uwbcannalbl.save()
-
-        elif form.cleaned_data.get('Task').finished_product == 'Finished_Box':
-            menufb = Finished_Box_manuf.objects.first()
-            menufb.input1_amt = form.cleaned_data.get('Count') * menufb.input1_amt
-            menufb.input2_amt = form.cleaned_data.get('Count') * menufb.input2_amt
-            menufb.input3_amt = form.cleaned_data.get('Count') * menufb.input3_amt
+            menu1 = Pre_roll_1g_manuf.objects.first()
+            menu1.cone_amt = form.cleaned_data.get('Count') * menu1.cone_amt
+            menu1.canna_amount = form.cleaned_data.get('Count') * menu1.canna_amount
 
             input1log = Inventory_Log(
-            user_id=form.cleaned_data.get('user_id'),
-            Date=form.cleaned_data.get('End_time'),
-            supply=menufb.input1,
-            supply_amt=menufb.input1_amt * -1,
-            UID=form.cleaned_data.get('UID'))
+                user_id=form.cleaned_data.get('user_id'),
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu1.input1,
+                supply_amt=menu1.cone_amt * -1,)
             input1log.save()
 
             input2log = Inventory_Log(
-            user_id=form.cleaned_data.get('user_id'),
-            Date=form.cleaned_data.get('End_time'),
-            supply=menufb.input2,
-            supply_amt=menufb.input2_amt * -1)
+                user_id=form.cleaned_data.get('user_id'),
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu1.input2,
+                supply_amt=menu1.canna_amount * -1,
+                UID=form.cleaned_data.get('UID'))
+            input2log.save()
+
+        elif form.cleaned_data.get('Task').finished_product == 'halfg_open_pre_roll':
+            menu2 = Preroll_half_manuf.objects.first()
+            menu2.cone_amt = form.cleaned_data.get('Count') * menu2.cone_amt
+            menu2.canna_amount = form.cleaned_data.get('Count') * menu2.canna_amount
+
+            input1log = Inventory_Log(
+                user_id=form.cleaned_data.get('user_id'),
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu2.input1,
+                supply_amt=menu2.cone_amt * -1)
+            input1log.save()
+
+            input2log = Inventory_Log(
+                user_id=form.cleaned_data.get('user_id'),
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu2.input2,
+                supply_amt=menu2.canna_amount * -1,
+                UID=form.cleaned_data.get('UID'))
+            input2log.save()
+
+        elif form.cleaned_data.get('Task').finished_product == 'halfg_pre_roll':
+            menu3 = Twisting_Preroll_half_manuf.objects.first()
+            menu3.pre_roll_amt = form.cleaned_data.get('Count') * menu3.pre_roll_amt
+            menu3.input1_amt = form.cleaned_data.get('Count') * menu3.input1_amt
+
+            input1log = Inventory_Log(
+                user_id=form.cleaned_data.get('user_id'),
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu3.input1,
+                supply_amt=menu3.input1_amt * -1)
+            input1log.save()
+
+        elif form.cleaned_data.get('Task').finished_product == '1g_pre_roll':
+            menu4 = Twisting_Preroll_1g_manuf.objects.first()
+            menu4.input1_amt = form.cleaned_data.get('Count') * menu4.input1_amt
+
+            input1log = Inventory_Log(
+                user_id=form.cleaned_data.get('user_id'),
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu4.input1,
+                supply_amt=menu4.input1_amt * -1,
+                UID=form.cleaned_data.get('UID'))
+            input1log.save()
+
+        elif form.cleaned_data.get('Task').finished_product == 'Unwrapped_box':
+            menu5 = Unwrapped_Box_manuf.objects.first()
+            menu5.pre_roll_amt = form.cleaned_data.get('Count') * menu5.pre_roll_amt
+            menu5.box_amt = form.cleaned_data.get('Count') * menu5.box_amt
+            menu5.label_amount = form.cleaned_data.get('Count') * menu5.label_amount
+            menu5.canna_sticker_amount = form.cleaned_data.get('Count') * menu5.canna_sticker_amount
+
+            input1log = Inventory_Log(
+                user_id=form.cleaned_data.get('user_id'),
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu5.input1,
+                supply_amt=menu5.pre_roll_amt * -1,
+                UID=form.cleaned_data.get('UID'))
+            input1log.save()
+
+            input2log = Inventory_Log(
+                user_id=form.cleaned_data.get('user_id'),
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu5.input2,
+                supply_amt=menu5.box_amt * -1)
             input2log.save()
 
             input3log = Inventory_Log(
-            user_id=form.cleaned_data.get('user_id'),
-            Date=form.cleaned_data.get('End_time'),
-            supply=menufb.input3,
-            supply_amt=menufb.input3_amt * -1)
+                user_id=form.cleaned_data.get('user_id'),
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu5.input3,
+                supply_amt=menu5.label_amount * -1)
+            input3log.save()
+
+            input4log = Inventory_Log(
+                user_id=form.cleaned_data.get('user_id'),
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu5.input4,
+                supply_amt=menu5.label_amount * -1)
+            input4log.save()
+
+        elif form.cleaned_data.get('Task').finished_product == 'Finished_Box':
+            menu6 = Finished_Box_manuf.objects.first()
+            menu6.input1_amt = form.cleaned_data.get('Count') * menu6.input1_amt
+            menu6.input2_amt = form.cleaned_data.get('Count') * menu6.input2_amt
+            menu6.input3_amt = form.cleaned_data.get('Count') * menu6.input3_amt
+
+            input1log = Inventory_Log(
+                user_id=form.cleaned_data.get('user_id'),
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu6.input1,
+                supply_amt=menu6.input1_amt * -1,
+                UID=form.cleaned_data.get('UID'))
+            input1log.save()
+
+            input2log = Inventory_Log(
+                user_id=form.cleaned_data.get('user_id'),
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu6.input2,
+                supply_amt=menu6.input2_amt * -1)
+            input2log.save()
+
+            input3log = Inventory_Log(
+                user_id=form.cleaned_data.get('user_id'),
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu6.input3,
+                supply_amt=menu6.input3_amt * -1)
             input3log.save()
 
         elif form.cleaned_data.get('Task').finished_product == 'Preroll_tube_2_half_grams':
-            menupt2hg = Finished_Tube_2half_grams_manuf.objects.first()
-            menupt2hg.input1_amt = form.cleaned_data.get('Count') * menupt2hg.input1_amt
-            menupt2hg.input2_amt = form.cleaned_data.get('Count') * menupt2hg.input2_amt
-            menupt2hg.input3_amt = form.cleaned_data.get('Count') * menupt2hg.input3_amt
+            menu7 = Finished_Tube_2half_grams_manuf.objects.first()
+            menu7.input1_amt = form.cleaned_data.get('Count') * menu7.input1_amt
+            menu7.input2_amt = form.cleaned_data.get('Count') * menu7.input2_amt
+            menu7.input3_amt = form.cleaned_data.get('Count') * menu7.input3_amt
 
             input1log = Inventory_Log(
-            user_id=form.cleaned_data.get('user_id'),
-            Date=form.cleaned_data.get('End_time'),
-            supply=menupt2hg.input1,
-            supply_amt=menupt2hg.input1_amt * -1,
-            UID=form.cleaned_data.get('UID'))
+                user_id=form.cleaned_data.get('user_id'),
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu7.input1,
+                supply_amt=menu7.input1_amt * -1,
+                UID=form.cleaned_data.get('UID'))
             input1log.save()
 
             input2log = Inventory_Log(
-            user_id=form.cleaned_data.get('user_id'),
-            Date=form.cleaned_data.get('End_time'),
-            supply=menupt2hg.input2,
-            supply_amt=menupt2hg.input2_amt * -1)
+                user_id=form.cleaned_data.get('user_id'),
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu7.input2,
+                supply_amt=menu7.input2_amt * -1)
             input2log.save()
 
             input3log = Inventory_Log(
-            user_id=form.cleaned_data.get('user_id'),
-            Date=form.cleaned_data.get('End_time'),
-            supply=menupt2hg.input3,
-            supply_amt=menupt2hg.input3_amt * -1)
+                user_id=form.cleaned_data.get('user_id'),
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu7.input3,
+                supply_amt=menu7.input3_amt * -1)
             input3log.save()
 
         elif form.cleaned_data.get('Task').finished_product == 'Preroll_tube_1_gram':
-            menupt1g = Finished_Tube_1_gram_manuf.objects.first()
-            menupt1g.input1_amt = form.cleaned_data.get('Count') * menupt1g.input1_amt
-            menupt1g.input2_amt = form.cleaned_data.get('Count') * menupt1g.input2_amt
-            menupt1g.input3_amt = form.cleaned_data.get('Count') * menupt1g.input3_amt
+            menu8 = Finished_Tube_1_gram_manuf.objects.first()
+            menu8.input1_amt = form.cleaned_data.get('Count') * menu8.input1_amt
+            menu8.input2_amt = form.cleaned_data.get('Count') * menu8.input2_amt
+            menu8.input3_amt = form.cleaned_data.get('Count') * menu8.input3_amt
 
             input1log = Inventory_Log(
-            user_id=form.cleaned_data.get('user_id'),
-            Date=form.cleaned_data.get('End_time'),
-            supply=menupt1g.input1,
-            supply_amt=menupt1g.input1_amt * -1,
-            UID=form.cleaned_data.get('UID'))
+                user_id=form.cleaned_data.get('user_id'),
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu8.input1,
+                supply_amt=menu8.input1_amt * -1,
+                UID=form.cleaned_data.get('UID'))
             input1log.save()
 
             input2log = Inventory_Log(
-            user_id=form.cleaned_data.get('user_id'),
-            Date=form.cleaned_data.get('End_time'),
-            supply=menupt1g.input2,
-            supply_amt=menupt1g.input2_amt * -1)
+                user_id=form.cleaned_data.get('user_id'),
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu8.input2,
+                supply_amt=menu8.input2_amt * -1)
             input2log.save()
 
             input3log = Inventory_Log(
-            user_id=form.cleaned_data.get('user_id'),
-            Date=form.cleaned_data.get('End_time'),
-            supply=menupt1g.input3,
-            supply_amt=menupt1g.input3_amt * -1)
+                user_id=form.cleaned_data.get('user_id'),
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu8.input3,
+                supply_amt=menu8.input3_amt * -1)
             input3log.save()
 
         obj1 = Inventory_Log(
@@ -460,12 +456,10 @@ class productioncreateview(CreateView):
         )
 
         obj1.save()
-        return super(productioncreateview, self).form_valid(form)
+        return super(ProductionCreateView, self).form_valid(form)
 
 
-
-
-class productiondetailview(DetailView):
+class ProductionDetailView(DetailView):
     template_name = 'productions/production_detail.html'
 
     def get_object(self):
@@ -473,7 +467,7 @@ class productiondetailview(DetailView):
         return get_object_or_404(Production_tracker, id=id_)
 
 
-class productionupdateview(UpdateView):
+class ProductionUpdateView(UpdateView):
     template_name = 'productions/production_create.html'
     form_class = Productionform
     queryset = Production_tracker.objects.all()
@@ -487,9 +481,8 @@ class productionupdateview(UpdateView):
         return super().form_valid(form)
 
 
-class productiondeleteview(DeleteView):
+class ProductionDeleteView(DeleteView):
     template_name = 'productions/productions_delete.html'
-
 
     def get_object(self):
         id_ = self.kwargs.get("id")
@@ -497,4 +490,3 @@ class productiondeleteview(DeleteView):
 
     def get_success_url(self):
         return reverse('production:production-tracker')
-

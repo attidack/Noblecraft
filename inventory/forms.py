@@ -11,6 +11,5 @@ class Inventoryform(forms.ModelForm):
             'supply',
             'supply_amt',
             'per_box',
-            'Date',
             'UID'
         ]

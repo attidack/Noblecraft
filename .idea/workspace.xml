@@ -22,6 +22,14 @@
     <list default="true" id="0159a6c5-3382-43b2-aa34-855b5c8bfead" name="Default Changelist" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Noblecraft/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Noblecraft/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,9 +48,22 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/userfields" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="userfields" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -165,7 +186,8 @@
       <workItem from="1603036534980" duration="100094000" />
       <workItem from="1603235635754" duration="4072000" />
       <workItem from="1603240468573" duration="29149000" />
-      <workItem from="1603271601022" duration="7663000" />
+      <workItem from="1603271601022" duration="20523000" />
+      <workItem from="1603582618075" duration="24482000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1603077590305</created>
@@ -314,7 +336,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603299799052</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="update">
+      <created>1603332597779</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1603332597779</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,38 +395,38 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="1102" y="410" key="Github.UntrackedFilesDialog/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603077416137" />
-    <state width="2517" height="402" key="GridCell.Tab.0.bottom" timestamp="1603331721250">
+    <state width="2517" height="494" key="GridCell.Tab.0.bottom" timestamp="1603675849214">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="402" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603331721250" />
-    <state width="2517" height="402" key="GridCell.Tab.0.center" timestamp="1603331721250">
+    <state width="2517" height="494" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603675849214" />
+    <state width="2517" height="494" key="GridCell.Tab.0.center" timestamp="1603675849214">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="402" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603331721250" />
-    <state width="2517" height="402" key="GridCell.Tab.0.left" timestamp="1603331721250">
+    <state width="2517" height="494" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603675849214" />
+    <state width="2517" height="494" key="GridCell.Tab.0.left" timestamp="1603675849214">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="402" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603331721250" />
-    <state width="2517" height="402" key="GridCell.Tab.0.right" timestamp="1603331721250">
+    <state width="2517" height="494" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603675849214" />
+    <state width="2517" height="494" key="GridCell.Tab.0.right" timestamp="1603675849214">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="402" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603331721250" />
-    <state width="2517" height="494" key="GridCell.Tab.1.bottom" timestamp="1603235622659">
+    <state width="2517" height="494" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603675849214" />
+    <state width="2517" height="494" key="GridCell.Tab.1.bottom" timestamp="1603675849214">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="494" key="GridCell.Tab.1.bottom/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603235622659" />
-    <state width="2517" height="494" key="GridCell.Tab.1.center" timestamp="1603235622658">
+    <state width="2517" height="494" key="GridCell.Tab.1.bottom/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603675849214" />
+    <state width="2517" height="494" key="GridCell.Tab.1.center" timestamp="1603675849214">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="494" key="GridCell.Tab.1.center/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603235622658" />
-    <state width="2517" height="494" key="GridCell.Tab.1.left" timestamp="1603235622658">
+    <state width="2517" height="494" key="GridCell.Tab.1.center/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603675849214" />
+    <state width="2517" height="494" key="GridCell.Tab.1.left" timestamp="1603675849214">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="494" key="GridCell.Tab.1.left/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603235622658" />
-    <state width="2517" height="494" key="GridCell.Tab.1.right" timestamp="1603235622659">
+    <state width="2517" height="494" key="GridCell.Tab.1.left/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603675849214" />
+    <state width="2517" height="494" key="GridCell.Tab.1.right" timestamp="1603675849214">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="494" key="GridCell.Tab.1.right/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603235622659" />
+    <state width="2517" height="494" key="GridCell.Tab.1.right/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603675849214" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1603037117522">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
@@ -426,6 +455,10 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="987" y="261" width="585" height="888" key="find.popup/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603262843295" />
+    <state x="1060" y="418" key="git4idea.branch.GitSmartOperationDialog" timestamp="1603333339976">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="1060" y="418" key="git4idea.branch.GitSmartOperationDialog/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603333339976" />
     <state x="943" y="317" width="672" height="678" key="search.everywhere.popup" timestamp="1603243258135">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
@@ -443,7 +476,7 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Python.DjangoServer">
-        <watch expression="form.cleaned_data.get('Task').finished_product" language="Python" />
+        <watch expression="if self.object.Task.finished_product == '1g_open_pre_roll':" language="Python" />
       </configuration>
     </watches-manager>
   </component>

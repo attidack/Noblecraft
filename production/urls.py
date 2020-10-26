@@ -1,23 +1,23 @@
 from django.urls import path
 from production.views import (
-    productiontrackerview,
-    productioncreateview,
-    productiondetailview,
-    productionupdateview,
-    productiondeleteview,
-    productioncreateviewstart,
-    productioncreateviewend
+    ProductionTrackerView,
+    ProductionCreateView,
+    ProductionDetailView,
+    ProductionUpdateView,
+    ProductionDeleteView,
+    ProductionCreateViewStart,
+    ProductionEndView
 
 )
-app_name ='production'
+app_name = 'production'
 urlpatterns = [
-    path('', productiontrackerview.as_view(), name='production-tracker'),
-    path('create/', productioncreateview.as_view(), name='production-create'),
-    path('<int:id>/', productiondetailview.as_view(), name='production-detail'),
-    path('<int:id>/update/', productionupdateview.as_view(), name='article-update'),
-    path('<int:id>/delete/', productiondeleteview.as_view(), name='production-delete'),
-    path('start/', productioncreateviewstart.as_view(), name='production-start'),
-    path('end/', productioncreateviewend.as_view(), name='production-end'),
+    path('', ProductionTrackerView.as_view(), name='production-tracker'),
+    path('create/', ProductionCreateView.as_view(), name='production-create'),
+    path('<int:id>/', ProductionDetailView.as_view(), name='production-detail'),
+    path('<int:id>/update/', ProductionUpdateView.as_view(), name='production-update'),
+    path('<int:id>/delete/', ProductionDeleteView.as_view(), name='production-delete'),
+    path('start/', ProductionCreateViewStart.as_view(), name='production-start'),
+    path('<int:id>/end/', ProductionEndView.as_view(), name='production-end'),
 
 
 ]

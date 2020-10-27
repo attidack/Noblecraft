@@ -20,42 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0159a6c5-3382-43b2-aa34-855b5c8bfead" name="Default Changelist" comment="update">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_25_2020_7_03_PM_[Default_Changelist]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_25_2020_7_03_PM__Default_Changelist_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]2/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Employees/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Employees/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Employees/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Employees/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Employees/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Employees/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Employees/templates/employees/employee_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Employees/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Employees/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Employees/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Noblecraft/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Noblecraft/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/templates/inventories/inventory_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventories/inventory_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/templates/inventories/inventory_log.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventories/inventory_log.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/templates/productions/production_tracker.html" beforeDir="false" afterPath="$PROJECT_DIR$/production/templates/productions/production_tracker.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/templates/productions/production_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/production/templates/productions/production_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/production/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/register/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/register/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/templates/register/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/templates/register/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/register/templates/registration/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/register/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/register/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -373,7 +340,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603332597779</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="update">
+      <created>1603763602353</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1603763602353</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -425,38 +399,42 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="1102" y="410" key="Github.UntrackedFilesDialog/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603077416137" />
-    <state width="2517" height="347" key="GridCell.Tab.0.bottom" timestamp="1603756546423">
+    <state width="2517" height="197" key="GridCell.Tab.0.bottom" timestamp="1603822019154">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="347" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603756546423" />
-    <state width="2517" height="347" key="GridCell.Tab.0.center" timestamp="1603756546421">
+    <state width="2517" height="197" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603822019154" />
+    <state width="2517" height="197" key="GridCell.Tab.0.center" timestamp="1603822019153">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="347" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603756546421" />
-    <state width="2517" height="347" key="GridCell.Tab.0.left" timestamp="1603756546420">
+    <state width="2517" height="197" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603822019153" />
+    <state width="2517" height="197" key="GridCell.Tab.0.left" timestamp="1603822019153">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="347" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603756546420" />
-    <state width="2517" height="347" key="GridCell.Tab.0.right" timestamp="1603756546422">
+    <state width="2517" height="197" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603822019153" />
+    <state width="2517" height="197" key="GridCell.Tab.0.right" timestamp="1603822019153">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="347" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603756546422" />
-    <state width="2517" height="494" key="GridCell.Tab.1.bottom" timestamp="1603675849214">
-      <screen x="0" y="0" width="2560" height="1410" />
+    <state width="2517" height="197" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603822019153" />
+    <state width="2391" height="197" key="GridCell.Tab.1.bottom" timestamp="1603822030023">
+      <screen x="-1920" y="349" width="1920" height="1050" />
     </state>
-    <state width="2517" height="494" key="GridCell.Tab.1.bottom/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603675849214" />
-    <state width="2517" height="494" key="GridCell.Tab.1.center" timestamp="1603675849214">
-      <screen x="0" y="0" width="2560" height="1410" />
+    <state width="2391" height="197" key="GridCell.Tab.1.bottom/0.0.2560.1410/-1920.349.1920.1050@-1920.349.1920.1050" timestamp="1603822030023" />
+    <state width="2517" height="197" key="GridCell.Tab.1.bottom/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603822019071" />
+    <state width="2391" height="197" key="GridCell.Tab.1.center" timestamp="1603822030022">
+      <screen x="-1920" y="349" width="1920" height="1050" />
     </state>
-    <state width="2517" height="494" key="GridCell.Tab.1.center/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603675849214" />
-    <state width="2517" height="494" key="GridCell.Tab.1.left" timestamp="1603675849214">
-      <screen x="0" y="0" width="2560" height="1410" />
+    <state width="2391" height="197" key="GridCell.Tab.1.center/0.0.2560.1410/-1920.349.1920.1050@-1920.349.1920.1050" timestamp="1603822030022" />
+    <state width="2517" height="197" key="GridCell.Tab.1.center/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603822019071" />
+    <state width="2391" height="197" key="GridCell.Tab.1.left" timestamp="1603822030022">
+      <screen x="-1920" y="349" width="1920" height="1050" />
     </state>
-    <state width="2517" height="494" key="GridCell.Tab.1.left/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603675849214" />
-    <state width="2517" height="494" key="GridCell.Tab.1.right" timestamp="1603675849214">
-      <screen x="0" y="0" width="2560" height="1410" />
+    <state width="2391" height="197" key="GridCell.Tab.1.left/0.0.2560.1410/-1920.349.1920.1050@-1920.349.1920.1050" timestamp="1603822030022" />
+    <state width="2517" height="197" key="GridCell.Tab.1.left/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603822019071" />
+    <state width="2391" height="197" key="GridCell.Tab.1.right" timestamp="1603822030023">
+      <screen x="-1920" y="349" width="1920" height="1050" />
     </state>
-    <state width="2517" height="494" key="GridCell.Tab.1.right/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603675849214" />
+    <state width="2391" height="197" key="GridCell.Tab.1.right/0.0.2560.1410/-1920.349.1920.1050@-1920.349.1920.1050" timestamp="1603822030023" />
+    <state width="2517" height="197" key="GridCell.Tab.1.right/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603822019071" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1603037117522">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
@@ -469,6 +447,10 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="872" y="425" key="Vcs.Push.Dialog.v2/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603299804658" />
+    <state x="808" y="579" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1603821560355">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="808" y="579" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603821560355" />
     <state x="-735" y="533" width="1173" height="715" key="dock-window-1" timestamp="1603060528499">
       <screen x="-1920" y="349" width="1920" height="1050" />
     </state>
@@ -496,6 +478,38 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/django/contrib/auth/backends.py</url>
+          <line>72</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/django/contrib/auth/backends.py</url>
+          <line>59</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/django/contrib/auth/mixins.py</url>
+          <line>72</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/django/contrib/auth/mixins.py</url>
+          <line>79</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/django/contrib/auth/models.py</url>
+          <line>203</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/django/contrib/auth/models.py</url>
+          <line>200</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -507,6 +521,10 @@
     <watches-manager>
       <configuration name="Python.DjangoServer">
         <watch expression="if self.object.Task.finished_product == '1g_open_pre_roll':" language="Python" />
+        <watch expression="self.get_user_permissions(user_obj, obj=obj)" language="Python" />
+        <watch expression="self.get_group_permissions(user_obj, obj=obj)" language="Python" />
+        <watch expression="user_obj.user_permissions.all()" language="Python" />
+        <watch expression="self.request.user.has_perms(perms)" language="Python" />
       </configuration>
     </watches-manager>
   </component>

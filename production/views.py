@@ -23,9 +23,13 @@ from django.views.generic import (
     UpdateView,
     DeleteView
 )
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 
 
-class ProductionTrackerView(ListView):
+
+class ProductionTrackerView(LoginRequiredMixin, PermissionRequiredMixin, ListView):
+    login_url = '../login/'
+    permission_required = 'admin'
     template_name = 'productions/production_tracker.html'
 
     def get(self, request, *args, **kwargs):
@@ -36,7 +40,9 @@ class ProductionTrackerView(ListView):
         return render(request, self.template_name, context)
 
 
-class ProductionCreateViewStart(CreateView):
+class ProductionCreateViewStart(LoginRequiredMixin, PermissionRequiredMixin,  CreateView):
+    login_url = '../login/'
+    permission_required = 'admin'
     template_name = 'productions/production_start.html'
     form_class = ProductionFormStart
     queryset = Production_tracker.objects.all()
@@ -50,7 +56,9 @@ class ProductionCreateViewStart(CreateView):
         return reverse("production:production-end", kwargs={"id": self.object.id})
 
 
-class ProductionEndView(UpdateView):
+class ProductionEndView(LoginRequiredMixin, PermissionRequiredMixin,  UpdateView):
+    login_url = '../login/'
+    permission_required = 'admin'
     template_name = 'productions/production_end.html'
     form_class = ProductionFormEnd
     queryset = Production_tracker.objects.all()
@@ -257,7 +265,9 @@ class ProductionEndView(UpdateView):
         return super().form_valid(form)
 
 
-class ProductionCreateView(CreateView):
+class ProductionCreateView(LoginRequiredMixin, PermissionRequiredMixin,  CreateView):
+    login_url = '../login/'
+    permission_required = 'admin'
     template_name = 'productions/production_create.html'
     form_class = Productionform
     queryset = Production_tracker.objects.all()
@@ -459,7 +469,9 @@ class ProductionCreateView(CreateView):
         return super(ProductionCreateView, self).form_valid(form)
 
 
-class ProductionDetailView(DetailView):
+class ProductionDetailView(LoginRequiredMixin, PermissionRequiredMixin,  DetailView):
+    login_url = '../login/'
+    permission_required = 'admin'
     template_name = 'productions/production_detail.html'
 
     def get_object(self):
@@ -467,7 +479,9 @@ class ProductionDetailView(DetailView):
         return get_object_or_404(Production_tracker, id=id_)
 
 
-class ProductionUpdateView(UpdateView):
+class ProductionUpdateView(LoginRequiredMixin, PermissionRequiredMixin,  UpdateView):
+    login_url = '../login/'
+    permission_required = 'admin'
     template_name = 'productions/production_create.html'
     form_class = Productionform
     queryset = Production_tracker.objects.all()
@@ -481,7 +495,9 @@ class ProductionUpdateView(UpdateView):
         return super().form_valid(form)
 
 
-class ProductionDeleteView(DeleteView):
+class ProductionDeleteView(LoginRequiredMixin, PermissionRequiredMixin,  DeleteView):
+    login_url = '../login/'
+    permission_required = 'admin'
     template_name = 'productions/productions_delete.html'
 
     def get_object(self):

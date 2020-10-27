@@ -12,8 +12,8 @@
 {% for instance in object_list %}
 
 <tr>
-    <td>{{ instance.id }}</td>
-    <td><a href='{{ instance.get_absolute_url }}'> {{ instance.user_id }}</a></td>
+    <td><a href='{{ instance.get_absolute_url }}'> {{ instance.id }}</a></td>
+    <td>{{ instance.user_id }}</td>
     <td>{{  instance.supply  }}</td>
     <td>{{  instance.supply_amt  }}</td>
     <td>{{  instance.Date  }}</td>

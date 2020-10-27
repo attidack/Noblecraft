@@ -40,10 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pages',
     'production',
-    'Employees',
     'inventory',
     'register.apps.RegisterConfig',
     'crispy_forms',
+    'phonenumber_field'
 ]
 
 MIDDLEWARE = [
@@ -131,6 +131,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
+PHONENUMBER_DEFAULT_REGION = 'US'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'

@@ -8,9 +8,12 @@ from django.views.generic import (
     UpdateView,
     DeleteView
 )
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 
 
-class InventoryLog(ListView):
+class InventoryLog(LoginRequiredMixin, PermissionRequiredMixin, ListView):
+    login_url = '../login/'
+    permission_required = 'admin'
     template_name = 'inventories/inventory_log.html'
 
     def get(self, request, *args, **kwargs):
@@ -21,7 +24,9 @@ class InventoryLog(ListView):
         return render(request, self.template_name, context)
 
 
-class inventorycreateview(CreateView):
+class inventorycreateview(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
+    login_url = '../login/'
+    permission_required = 'admin'
     template_name = 'inventories/inventory_create.html'
     form_class = Inventoryform
     queryset = Inventory_Log.objects.all()
@@ -31,13 +36,18 @@ class inventorycreateview(CreateView):
 
 
 # Create your views here.
-class inventorydetailview(DetailView):
+class inventorydetailview(LoginRequiredMixin, PermissionRequiredMixin, DetailView):
+    login_url = '../login/'
+    permission_required = 'admin'
     template_name = 'inventories/inventory_detail.html'
     def get_object(self):
         id_ = self.kwargs.get("id")
         return get_object_or_404(Inventory_Log, id=id_)
 
-class inventoryupdateview(UpdateView):
+
+class inventoryupdateview(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
+    login_url = '../login/'
+    permission_required = 'admin'
     template_name = 'inventories/inventory_create.html'
     form_class = Inventoryform
     queryset = Inventory_Log.objects.all()
@@ -49,7 +59,10 @@ class inventoryupdateview(UpdateView):
     def form_valid(self, form):
         return super().form_valid(form)
 
-class inventorydeleteview(DeleteView):
+
+class inventorydeleteview(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
+    login_url = '../login/'
+    permission_required = 'admin'
     template_name = 'inventories/inventory_delete.html'
 
 

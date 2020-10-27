@@ -139,7 +139,7 @@ class Finished_Tube_1_gram_manuf(models.Model):
         return reverse("production:production-tracker", kwargs={"id": self.id})
 
 class Production_tracker(models.Model):
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name="production", null=True)
     Start_time = models.DateTimeField(blank=True, null=True)
     End_time = models.DateTimeField(blank=True, null=True)
     Task = models.ForeignKey('Tasks', on_delete=models.PROTECT)

@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <style type="text/css">
+    #hello-msg{
+        font-size: 18px;
+        color: #fff;
+        margin-right: 20px;
+    }
     .sidenav {
         height: 100%;
         width: 160px;
@@ -49,6 +54,9 @@
         <a href="/production/start">Start</a>
         <a href="/inventory">Inventory</a>
         <a href="/production">Production</a>
+        <span id="hello-msg"> Hello, {{ request.user }}</span>
+        <span>
+        <a href="{% url 'logout' %}">Logout</a></span>
         {% else %}
         <a href="/register">Register</a>
         <a href="/login">Login Here</a>

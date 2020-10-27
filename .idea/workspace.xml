@@ -20,16 +20,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0159a6c5-3382-43b2-aa34-855b5c8bfead" name="Default Changelist" comment="update">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_25_2020_7_03_PM_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_25_2020_7_03_PM__Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]2/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Employees/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Employees/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Employees/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Employees/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Employees/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Employees/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Employees/templates/employees/employee_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Employees/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Employees/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Employees/views.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Noblecraft/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Noblecraft/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventory/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventory/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory/templates/inventories/inventory_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventories/inventory_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory/templates/inventories/inventory_log.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventories/inventory_log.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/production/migrations/0001_initial.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/production/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/templates/productions/production_tracker.html" beforeDir="false" afterPath="$PROJECT_DIR$/production/templates/productions/production_tracker.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/production/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/register/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/register/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/templates/register/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/templates/register/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/register/templates/registration/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/register/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/register/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +72,9 @@
         <option value="HTML File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="master" />
   </component>
   <component name="Git.Settings">
     <favorite-branches>
@@ -90,6 +119,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projects\noblecraft\Noblecraft\register\templates\registration" />
       <recent name="C:\Projects\noblecraft\Noblecraft\register\templates\register" />
     </key>
   </component>
@@ -395,22 +425,22 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="1102" y="410" key="Github.UntrackedFilesDialog/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603077416137" />
-    <state width="2517" height="494" key="GridCell.Tab.0.bottom" timestamp="1603675849214">
+    <state width="2517" height="347" key="GridCell.Tab.0.bottom" timestamp="1603756546423">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="494" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603675849214" />
-    <state width="2517" height="494" key="GridCell.Tab.0.center" timestamp="1603675849214">
+    <state width="2517" height="347" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603756546423" />
+    <state width="2517" height="347" key="GridCell.Tab.0.center" timestamp="1603756546421">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="494" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603675849214" />
-    <state width="2517" height="494" key="GridCell.Tab.0.left" timestamp="1603675849214">
+    <state width="2517" height="347" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603756546421" />
+    <state width="2517" height="347" key="GridCell.Tab.0.left" timestamp="1603756546420">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="494" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603675849214" />
-    <state width="2517" height="494" key="GridCell.Tab.0.right" timestamp="1603675849214">
+    <state width="2517" height="347" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603756546420" />
+    <state width="2517" height="347" key="GridCell.Tab.0.right" timestamp="1603756546422">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="494" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603675849214" />
+    <state width="2517" height="347" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603756546422" />
     <state width="2517" height="494" key="GridCell.Tab.1.bottom" timestamp="1603675849214">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
@@ -455,10 +485,10 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="987" y="261" width="585" height="888" key="find.popup/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603262843295" />
-    <state x="1060" y="418" key="git4idea.branch.GitSmartOperationDialog" timestamp="1603333339976">
+    <state x="1060" y="418" key="git4idea.branch.GitSmartOperationDialog" timestamp="1603678045301">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="1060" y="418" key="git4idea.branch.GitSmartOperationDialog/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603333339976" />
+    <state x="1060" y="418" key="git4idea.branch.GitSmartOperationDialog/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603678045301" />
     <state x="943" y="317" width="672" height="678" key="search.everywhere.popup" timestamp="1603243258135">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>

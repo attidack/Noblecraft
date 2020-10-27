@@ -1,5 +1,3 @@
-from Employees.models import Employee
-from production.models import Tasks
 from django import forms
 from .models import Inventory_Log
 

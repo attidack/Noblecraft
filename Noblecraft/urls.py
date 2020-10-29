@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from pages.views import home_view, contact_view, about_view
+from register.views import LoginPage
 
 urlpatterns= [
     path('', home_view, name='home'),
@@ -25,5 +26,7 @@ urlpatterns= [
     path('register/', include('register.urls')),
     path('production/', include('production.urls')),
     path('inventory/', include('inventory.urls')),
-    path('admin/', admin.site.urls)
+    path('dashboard/', include('dashboard.urls')),
+    path('admin/', admin.site.urls),
+    path('login/', LoginPage.as_view(), name='login'),
 ]

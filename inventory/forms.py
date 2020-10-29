@@ -8,6 +8,6 @@ class Inventoryform(forms.ModelForm):
             'user_id',
             'supply',
             'supply_amt',
-            'per_box',
+            'number_units_in_box',
             'UID'
         ]

@@ -16,6 +16,7 @@
     <td>{{ object.supply }}</td>
     <td>{{ object.supply_amt }}</td>
     <td>{{ object.Date }}</td>
+    <td><a href="{% url "inventory:inventory-update" object.id %}">Edit</a> </td>
 </tr>
 </table>
 {% endblock %}

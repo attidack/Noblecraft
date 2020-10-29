@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<table class="table table-hover">
+    <tr>
+        <th>Supply</th>
+        <th>Supply Level</th>
+    </tr>
+{% for key, value in finalrep.items %}
+    <tr>
+        <td>{{key}}</td>
+        <td>{{value}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

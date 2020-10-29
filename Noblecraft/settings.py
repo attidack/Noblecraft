@@ -41,9 +41,11 @@ INSTALLED_APPS = [
     'pages',
     'production',
     'inventory',
+    'dashboard',
     'register.apps.RegisterConfig',
     'crispy_forms',
-    'phonenumber_field'
+    'phonenumber_field',
+
 ]
 
 MIDDLEWARE = [
@@ -83,7 +85,7 @@ WSGI_APPLICATION = 'Noblecraft.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'noblecraft',
+        'NAME': 'new',
         'USER': 'postgres',
         'PASSWORD': 'w33disg00d!',
         'HOST': 'localhost',
@@ -129,7 +131,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 PHONENUMBER_DEFAULT_REGION = 'US'
 LOGIN_REDIRECT_URL = '/'

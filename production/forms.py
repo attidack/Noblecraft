@@ -11,6 +11,7 @@ class Productionform(forms.ModelForm):
             'Start_time',
             'End_time',
             'Count',
+            'Count2',
             'UID'
         ]
 
@@ -29,4 +30,5 @@ class ProductionFormEnd(forms.ModelForm):
         model = Production_tracker
         fields = [
             'Count',
+            'Count2',
         ]

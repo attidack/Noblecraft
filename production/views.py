@@ -25,11 +25,16 @@ from django.views.generic import (
 )
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 
+class UserAccessMixin(PermissionRequiredMixin):
+    def has_permission(self):
+        perms = self.get_permission_required()
+        groups = self.request.user.groups.filter(name__in=perms).exists()
+        return groups
 
 
-class ProductionTrackerView(LoginRequiredMixin, PermissionRequiredMixin, ListView):
+class ProductionTrackerView(UserAccessMixin, LoginRequiredMixin, ListView):
     login_url = '../login/'
-    permission_required = 'employee'
+    permission_required = ('admin', 'employee', 'manager', 'Owen-perms')
     permission_denied_message = 'you do not have permission to view this page'
     template_name = 'productions/production_tracker.html'
 
@@ -37,12 +42,12 @@ class ProductionTrackerView(LoginRequiredMixin, PermissionRequiredMixin, ListVie
         queryset = Production_tracker.objects.all()
         # queryset = Production_tracker.objects.filter(user_id=self.request.user)
         context = {
-            "object_list": queryset
+            "object_list": queryset.order_by('-pk')
         }
         return render(request, self.template_name, context)
 
 
-class ProductionCreateViewStart(LoginRequiredMixin, PermissionRequiredMixin,  CreateView):
+class ProductionCreateViewStart(LoginRequiredMixin, UserAccessMixin,  CreateView):
     login_url = '../login/'
     permission_required = ('admin', 'employee', 'manager', 'Owen-perms')
     template_name = 'productions/production_start.html'
@@ -59,7 +64,7 @@ class ProductionCreateViewStart(LoginRequiredMixin, PermissionRequiredMixin,  Cr
         return reverse("production:production-end", kwargs={"id": self.object.id})
 
 
-class ProductionEndView(LoginRequiredMixin, PermissionRequiredMixin,  UpdateView):
+class ProductionEndView(LoginRequiredMixin, UserAccessMixin,  UpdateView):
     login_url = '../login/'
     permission_required = ('admin', 'employee', 'manager', 'Owen-perms')
     permission_denied_message = 'you do not have permission to view this page'
@@ -205,7 +210,7 @@ class ProductionEndView(LoginRequiredMixin, PermissionRequiredMixin,  UpdateView
             menu7 = Finished_Tube_2half_grams_manuf.objects.first()
             menu7.input1_amt = form.cleaned_data.get('Count') * menu7.input1_amt
             menu7.input2_amt = form.cleaned_data.get('Count') * menu7.input2_amt
-            menu7.input3_amt = form.cleaned_data.get('Count') * menu7.input3_amt
+            menu7.input3_amount = form.cleaned_data.get('Count') * menu7.input3_amount
 
             input1log = Inventory_Log(
                 user_id=self.request.user,
@@ -226,7 +231,7 @@ class ProductionEndView(LoginRequiredMixin, PermissionRequiredMixin,  UpdateView
                 user_id=self.request.user,
                 Date=form.cleaned_data.get('End_time'),
                 supply=menu7.input3,
-                supply_amt=menu7.input3_amt * -1)
+                supply_amt=menu7.input3_amount * -1)
             input3log.save()
 
         elif self.object.Task.finished_product == 'Preroll_tube_1_gram':
@@ -257,6 +262,16 @@ class ProductionEndView(LoginRequiredMixin, PermissionRequiredMixin,  UpdateView
                 supply_amt=menu8.input3_amt * -1)
             input3log.save()
 
+        elif self.object.Task.finished_product == 'A-Bud_grams':
+
+            input1log = Inventory_Log(
+                user_id=self.request.user,
+                Date=form.cleaned_data.get('End_time'),
+                supply='B-Bud_grams',
+                supply_amt=form.cleaned_data.get('Count2'),
+                UID=form.cleaned_data.get('UID'))
+            input1log.save()
+
         obj1 = Inventory_Log(
             user_id=self.request.user,
             Date=form.cleaned_data.get('End_time'),
@@ -269,7 +284,8 @@ class ProductionEndView(LoginRequiredMixin, PermissionRequiredMixin,  UpdateView
         return super().form_valid(form)
 
 
-class ProductionCreateView(LoginRequiredMixin, PermissionRequiredMixin,  CreateView):
+
+class ProductionCreateView(LoginRequiredMixin, UserAccessMixin,  CreateView):
     login_url = '../login/'
     permission_required = ('admin', 'manager', 'Owen-perms')
     template_name = 'productions/production_create.html'
@@ -473,7 +489,7 @@ class ProductionCreateView(LoginRequiredMixin, PermissionRequiredMixin,  CreateV
         return super(ProductionCreateView, self).form_valid(form)
 
 
-class ProductionDetailView(LoginRequiredMixin, PermissionRequiredMixin,  DetailView):
+class ProductionDetailView(LoginRequiredMixin, UserAccessMixin,  DetailView):
     login_url = '../login/'
     permission_required = ('admin', 'employee', 'manager', 'Owen-perms')
     template_name = 'productions/production_detail.html'
@@ -483,7 +499,7 @@ class ProductionDetailView(LoginRequiredMixin, PermissionRequiredMixin,  DetailV
         return get_object_or_404(Production_tracker, id=id_)
 
 
-class ProductionUpdateView(LoginRequiredMixin, PermissionRequiredMixin,  UpdateView):
+class ProductionUpdateView(LoginRequiredMixin, UserAccessMixin,  UpdateView):
     login_url = '../login/'
     permission_required = 'admin'
     template_name = 'productions/production_create.html'
@@ -499,7 +515,7 @@ class ProductionUpdateView(LoginRequiredMixin, PermissionRequiredMixin,  UpdateV
         return super().form_valid(form)
 
 
-class ProductionDeleteView(LoginRequiredMixin, PermissionRequiredMixin,  DeleteView):
+class ProductionDeleteView(LoginRequiredMixin, UserAccessMixin,  DeleteView):
     login_url = '../login/'
     permission_required = ('admin', 'manager', 'Owen-perms')
     template_name = 'productions/productions_delete.html'

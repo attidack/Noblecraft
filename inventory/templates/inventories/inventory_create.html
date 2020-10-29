@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
-{% block header %}
-
-{% endblock %}
+{% load crispy_forms_tags %}
 {% block content %}
 
-<form method='post'>{% csrf_token %}
-    {{ form.as_ul }}
-    <input type='submit' value="Save" />
+<form method='post' class="input-group-text">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-success">Update</button>
 </form>
 {% endblock %}

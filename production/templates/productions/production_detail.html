@@ -1,5 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>{{object.user_id}}{{ user.username }}</h1>
-<p>Started working on {{ object.Task }} at {{ object.Start_time }} and finished at {{ object.End_time }} during which time produced {{ object.Count }} units</p>
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>user</th>
+        <th>Start</th>
+        <th>End</th>
+        <th>Task</th>
+        <th>Count</th>
+        <th>Count2</th>
+        <th>UID</th>
+    </tr>
+
+
+<tr>
+    <td>{{object.id}}</td>
+    <td>{{ object.user_id }}</td>
+    <td>{{ object.Start_time }}</td>
+    <td>{{ object.End_time }}</td>
+    <td>{{ object.Task }}</td>
+    <td>{{ object.Count }}</td>
+    <td>{{ object.Count2 }}</td>
+    <td>{{ object.UID }}</td>
+    <td><a href="{% url "production:production-update" object.id %}">Edit</a> </td>
+</tr>
+</table>
 {% endblock %}

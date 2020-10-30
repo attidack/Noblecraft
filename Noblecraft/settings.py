@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'dashboard',
     'register.apps.RegisterConfig',
     'crispy_forms',
-    'phonenumber_field',
+    'mathfilters',
 
 ]
 
@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'Noblecraft.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'new',
+        'NAME': 'noblecraft',
         'USER': 'postgres',
         'PASSWORD': 'w33disg00d!',
         'HOST': 'localhost',

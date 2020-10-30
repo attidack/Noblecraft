@@ -1,5 +1,5 @@
 from django import forms
-from .models import Inventory_Log
+from .models import Inventory_Log, InventorySupplies
 
 class Inventoryform(forms.ModelForm):
     class Meta:
@@ -8,6 +8,10 @@ class Inventoryform(forms.ModelForm):
             'user_id',
             'supply',
             'supply_amt',
-            'number_units_in_box',
             'UID'
         ]
+
+class InventorySuppliesform(forms.ModelForm):
+    class Meta:
+        model = InventorySupplies
+        fields = '__all__'

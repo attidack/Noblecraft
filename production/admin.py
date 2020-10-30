@@ -11,10 +11,14 @@ from .models import(
     Unwrapped_Box_manuf,
     Finished_Box_manuf,
     Finished_Tube_2half_grams_manuf,
-    Finished_Tube_1_gram_manuf
+    Finished_Tube_1_gram_manuf,
+    Trimming,
+    Grinding
 )
 admin.site.register(Tasks)
 admin.site.register(Production_tracker)
+admin.site.register(Trimming)
+admin.site.register(Grinding)
 admin.site.register(Pre_roll_1g_manuf)
 admin.site.register(Preroll_half_manuf)
 admin.site.register(Twisting_Preroll_half_manuf)

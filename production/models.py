@@ -23,12 +23,12 @@ class Trimming(models.Model):
 
 
 class Grinding(models.Model):
-    finished_product = models.CharField(max_length=120, default='A_bud')
+    finished_product = models.CharField(max_length=120, default='ground_cannabis')
     finished_product_amount = models.DecimalField(max_digits=10, decimal_places=2, default='0.0')
     input1 = models.CharField(max_length=120, default='A_bud')
-    input1_amt = models.IntegerField(default='1')
+    input1_amt = models.DecimalField(max_digits=10, decimal_places=2, default='0.0')
     input2 = models.CharField(max_length=120, default='B_bud')
-    input2_amt = models.IntegerField(default='1')
+    input2_amt = models.DecimalField(max_digits=10, decimal_places=2, default='0.0')
 
 
 class Pre_roll_1g_manuf(models.Model):
@@ -36,7 +36,7 @@ class Pre_roll_1g_manuf(models.Model):
     pre_roll_amt = models.IntegerField(default='1')
     input1 = models.CharField(max_length=120, default='cone')
     cone_amt = models.IntegerField(default='1')
-    input2 = models.CharField(max_length=120, default='cannabis grams')
+    input2 = models.CharField(max_length=120, default='ground_cannabis')
     canna_amount = models.DecimalField(max_digits=10, decimal_places=2, default='1')
 
     def __str__(self):
@@ -51,7 +51,7 @@ class Preroll_half_manuf(models.Model):
     pre_roll_amt = models.IntegerField(default='1')
     input1 = models.CharField(max_length=120, default='cone')
     cone_amt = models.IntegerField(default='1')
-    input2 = models.CharField(max_length=120, default='cannabis grams')
+    input2 = models.CharField(max_length=120, default='ground_cannabis')
     canna_amount = models.DecimalField(max_digits=10, decimal_places=2, default='.50')
 
     def __str__(self):

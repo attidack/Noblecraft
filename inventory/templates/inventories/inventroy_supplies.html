@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block pagetitle %}Inventory Log{% endblock %}
+{% block content %}
+
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>user</th>
+        <th>Supply</th>
+        <th>Supply Amount</th>
+        <th>Number of Units in Box</th>
+        <th>Price of Box</th>
+        <th>Date</th>
+    </tr>
+{% for instance in object_list %}
+
+<tr>
+    <td><a href='{{ instance.get_absolute_url }}'> {{ instance.id }}</a></td>
+    <td>{{ instance.user_id }}</td>
+    <td>{{  instance.supply  }}</td>
+    <td>{{  instance.supply_amt  }}</td>
+    <td>{{  instance.number_units_in_box  }}</td>
+    <td>{{  instance.price_of_box  }}</td>
+    <td>{{  instance.Date  }}</td>
+</tr>
+
+{% endfor %}
+    </table>
+
+{% endblock %}

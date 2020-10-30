@@ -13,6 +13,7 @@ from .models import (
     Finished_Box_manuf,
     Finished_Tube_2half_grams_manuf,
     Finished_Tube_1_gram_manuf,
+    Grinding,
 
 
 )
@@ -24,6 +25,7 @@ from django.views.generic import (
     DeleteView
 )
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+
 
 class UserAccessMixin(PermissionRequiredMixin):
     permission_denied_message = 'you do not have permission to view this page'
@@ -40,7 +42,6 @@ class ProductionTrackerView(UserAccessMixin, LoginRequiredMixin, ListView):
 
     def get(self, request, *args, **kwargs):
         queryset = Production_tracker.objects.all()
-        # queryset = Production_tracker.objects.filter(user_id=self.request.user)
         context = {
             "object_list": queryset.order_by('-pk')
         }
@@ -87,7 +88,7 @@ class ProductionEndView(LoginRequiredMixin, UserAccessMixin,  UpdateView):
                 user_id=self.request.user,
                 Date=form.cleaned_data.get('End_time'),
                 supply=menu1.input1,
-                supply_amt=menu1.cone_amt * -1,)
+                supply_amt=menu1.cone_amt * -1)
             input1log.save()
 
             input2log = Inventory_Log(
@@ -262,23 +263,50 @@ class ProductionEndView(LoginRequiredMixin, UserAccessMixin,  UpdateView):
                 supply_amt=menu8.input3_amount * -1)
             input3log.save()
 
-        elif self.object.Task.finished_product == 'A-Bud_grams':
+        elif self.object.Task.finished_product == 'A_bud':
 
             input1log = Inventory_Log(
                 user_id=self.request.user,
                 Date=form.cleaned_data.get('End_time'),
-                supply='B-Bud_grams',
+                supply='B_bud',
                 supply_amt=form.cleaned_data.get('Count2'),
                 UID=self.object.UID)
             input1log.save()
+
+        elif self.object.Task.finished_product == 'ground_cannabis':
+            menu9 = Grinding.objects.first()
+            menu9.input1_amt = form.cleaned_data.get('Count')
+            menu9.input2_amt = form.cleaned_data.get('Count2')
+            input1log = Inventory_Log(
+                user_id=self.request.user,
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu9.input1,
+                supply_amt=menu9.input1_amt * -1,
+                UID=self.object.UID)
+            input1log.save()
+
+            input2log = Inventory_Log(
+                user_id=self.request.user,
+                Date=form.cleaned_data.get('End_time'),
+                supply=menu9.input2,
+                supply_amt=menu9.input2_amt * -1,
+                UID=self.object.UID)
+            input2log.save()
+
+            outputlog = Inventory_Log(
+                user_id=self.request.user,
+                Date=form.cleaned_data.get('End_time'),
+                supply=self.object.Task.finished_product,
+                supply_amt=menu9.input2_amt * 1,
+                UID=self.object.UID)
+            outputlog.save()
 
         obj1 = Inventory_Log(
             user_id=self.request.user,
             Date=form.cleaned_data.get('End_time'),
             supply=self.object.Task.finished_product,
             supply_amt=form.cleaned_data.get('Count'),
-            UID=self.object.UID
-        )
+            UID=self.object.UID)
 
         obj1.save()
         return super().form_valid(form)

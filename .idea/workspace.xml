@@ -20,35 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0159a6c5-3382-43b2-aa34-855b5c8bfead" name="Default Changelist" comment="update">
-      <change afterPath="$PROJECT_DIR$/register/static/css/signin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Noblecraft.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Noblecraft.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Noblecraft/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Noblecraft/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Noblecraft/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Noblecraft/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/employee_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/employee_dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/inventory_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/inventory_dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/owen_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/owen_dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/templates/inventories/inventory_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventories/inventory_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/templates/inventories/inventory_log.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventories/inventory_log.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/templates/productions/production_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/production/templates/productions/production_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/templates/productions/production_end.html" beforeDir="false" afterPath="$PROJECT_DIR$/production/templates/productions/production_end.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/templates/productions/production_start.html" beforeDir="false" afterPath="$PROJECT_DIR$/production/templates/productions/production_start.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/templates/productions/production_tracker.html" beforeDir="false" afterPath="$PROJECT_DIR$/production/templates/productions/production_tracker.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/register/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/register/templates/registration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/templates/registration/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/register/templates/registration/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/register/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/register/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory/migrations/0002_auto_20201028_1903.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/migrations/0001_initial.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +60,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="first_live" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -107,11 +82,12 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/register/templates/static" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\noblecraft\Noblecraft" />
       <recent name="C:\Projects\noblecraft\Noblecraft\register\templates\static" />
       <recent name="C:\Projects\noblecraft\Noblecraft\static\css" />
     </key>
@@ -394,7 +370,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603951299707</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="update">
+      <created>1604043501838</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1604043501838</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -426,10 +409,10 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="1543" y="513" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603917953256" />
-    <state x="92" y="92" width="2376" height="1226" key="DiffContextDialog" timestamp="1603077594101">
+    <state x="92" y="92" width="2376" height="1226" key="DiffContextDialog" timestamp="1604044131898">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="92" y="92" width="2376" height="1226" key="DiffContextDialog/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603077594101" />
+    <state x="92" y="92" width="2376" height="1226" key="DiffContextDialog/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1604044131898" />
     <state x="1060" y="460" key="FileChooserDialogImpl" timestamp="1604017521261">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
@@ -494,10 +477,14 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="781" y="350" key="SettingsEditor/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1604020418425" />
-    <state x="872" y="425" key="Vcs.Push.Dialog.v2" timestamp="1603299804658">
+    <state x="872" y="425" key="Vcs.Push.Dialog.v2" timestamp="1604044021830">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="872" y="425" key="Vcs.Push.Dialog.v2/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603299804658" />
+    <state x="872" y="425" key="Vcs.Push.Dialog.v2/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1604044021830" />
+    <state x="92" y="92" width="2376" height="1226" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1604043759101">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="92" y="92" width="2376" height="1226" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1604043759101" />
     <state x="808" y="579" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1603821560355">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>

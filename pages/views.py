@@ -1,14 +1,21 @@
-from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views import View
+from production.models import Production_tracker
+from inventory.models import Inventory_Log
 # Create your views here.
 
-@login_required(login_url='/login')
-def home_view(request, *args, **kwargs):
-    print(args, kwargs)
-    print(request.user)
-    #return HttpResponse("<h1> Hello World</>")
-    return render(request, "home.html", {})
+
+class Home(LoginRequiredMixin, View):
+    login_url = 'login/'
+
+    def get(self, request):
+        context = {
+            'queryset': Production_tracker.objects.filter(user_id=self.request.user).order_by('-pk')[:3],
+            'object_list': Inventory_Log.objects.filter(user_id=self.request.user).order_by('-pk')[:10],
+        }
+        return render(request, "home.html", context)
 
 @login_required(login_url='/login')
 def contact_view(request, *args, **kwargs):

@@ -1,18 +1,29 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block title %}
-    Login Here
-{% endblock %}
-{% load crispy_forms_tags %}
+
+{% block title %} Login Here {% endblock %}
+
+{% block pagetitle %} Please sign in {% endblock %}
+
 {% block content %}
-    <form method="POST" class="from-group">
+    {% for message in messages %}
+        <div class="alert alert-warning" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <form method="POST" class="form-signin">
         {% csrf_token %}
-        {{ form|crispy }}
-        <p>Dont have an account? Create one <a href="/register">Here</a> </p>
-        <button type="submit" class="btn btn-success">Login</button>
-
+        <p>
+            <label for="username" class="sr-only">Username</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+        </p>
+        <p>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+        </p>
+        <button class="btn btn-success" type="submit">Sign in</button>
 
     </form>
-
 
 {% endblock %}

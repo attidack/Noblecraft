@@ -9,6 +9,8 @@ from django.views.generic import (
     DeleteView
 )
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.http import HttpResponse
+
 
 
 class UserAccessMixin(PermissionRequiredMixin):

@@ -1,17 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
 
-{{ input_log_number }}
 <table class="table table-hover">
+    <caption style="caption-side: top ; text-align: center">Production tracker entries</caption>
     <tr>
         <th>ID</th>
         <th>user_id</th>
         <th>Start_time</th>
         <th>End_time</th>
         <th>Task</th>
+        <th>UID</th>
         <th>Count</th>
+        <th>Count2</th>
     </tr>
-{% for instance in queryset %}
+    {% for instance in queryset %}
 
 <tr>
     <td><a href='{{ instance.get_absolute_url }}'>{{ instance.id }}</a></td>
@@ -19,9 +21,34 @@
     <td>{{  instance.Start_time  }}</td>
     <td>{{  instance.End_time  }}</td>
     <td>{{  instance.Task  }}</td>
+    <td>{{  instance.UID  }}</td>
     <td>{{  instance.Count  }}</td>
+    <td>{{  instance.Count2  }}</td>
 </tr>
 
-{% endfor %}
-    </table>
+    {% endfor %}
+</table>
+<table class="table table-hover">
+    <caption style="caption-side: top ; text-align: center">Inventory entries</caption>
+    <tr>
+        <th>ID</th>
+        <th>user</th>
+        <th>Supply</th>
+        <th>Supply Amount</th>
+        <th>UID</th>
+        <th>Date</th>
+    </tr>
+    {% for instance in object_list %}
+
+    <tr>
+        <td><a href='{{ instance.get_absolute_url }}'> {{ instance.id }}</a></td>
+        <td>{{ instance.user_id }}</td>
+        <td>{{  instance.supply  }}</td>
+        <td>{{  instance.supply_amt  }}</td>
+        <td>{{  instance.UID  }}</td>
+        <td>{{  instance.Date  }}</td>
+    </tr>
+
+    {% endfor %}
+</table>
 {% endblock %}

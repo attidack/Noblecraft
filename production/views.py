@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from datetime import datetime
 from inventory.models import Inventory_Log
 from .forms import Productionform, ProductionFormStart, ProductionFormEnd
-from django.contrib.auth.models import User
+
 from .models import (
     Production_tracker,
     Pre_roll_1g_manuf,
@@ -26,6 +26,7 @@ from django.views.generic import (
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 
 class UserAccessMixin(PermissionRequiredMixin):
+    permission_denied_message = 'you do not have permission to view this page'
     def has_permission(self):
         perms = self.get_permission_required()
         groups = self.request.user.groups.filter(name__in=perms).exists()
@@ -35,7 +36,6 @@ class UserAccessMixin(PermissionRequiredMixin):
 class ProductionTrackerView(UserAccessMixin, LoginRequiredMixin, ListView):
     login_url = '../login/'
     permission_required = ('admin', 'employee', 'manager', 'Owen-perms')
-    permission_denied_message = 'you do not have permission to view this page'
     template_name = 'productions/production_tracker.html'
 
     def get(self, request, *args, **kwargs):
@@ -95,7 +95,7 @@ class ProductionEndView(LoginRequiredMixin, UserAccessMixin,  UpdateView):
                 Date=form.cleaned_data.get('End_time'),
                 supply=menu1.input2,
                 supply_amt=menu1.canna_amount * -1,
-                UID=form.cleaned_data.get('UID'))
+                UID=self.object.UID)
             input2log.save()
 
         elif self.object.Task.finished_product == 'halfg_open_pre_roll':
@@ -115,7 +115,7 @@ class ProductionEndView(LoginRequiredMixin, UserAccessMixin,  UpdateView):
                 Date=form.cleaned_data.get('End_time'),
                 supply=menu2.input2,
                 supply_amt=menu2.canna_amount * -1,
-                UID=form.cleaned_data.get('UID'))
+                UID=self.object.UID)
             input2log.save()
 
         elif self.object.Task.finished_product == 'halfg_pre_roll':
@@ -139,7 +139,7 @@ class ProductionEndView(LoginRequiredMixin, UserAccessMixin,  UpdateView):
                 Date=form.cleaned_data.get('End_time'),
                 supply=menu4.input1,
                 supply_amt=menu4.input1_amt * -1,
-                UID=form.cleaned_data.get('UID'))
+                UID=self.object.UID)
             input1log.save()
 
         elif self.object.Task.finished_product == 'Unwrapped_box':
@@ -154,7 +154,7 @@ class ProductionEndView(LoginRequiredMixin, UserAccessMixin,  UpdateView):
                 Date=form.cleaned_data.get('End_time'),
                 supply=menu5.input1,
                 supply_amt=menu5.pre_roll_amt * -1,
-                UID=form.cleaned_data.get('UID'))
+                UID=self.object.UID)
             input1log.save()
 
             input2log = Inventory_Log(
@@ -189,7 +189,7 @@ class ProductionEndView(LoginRequiredMixin, UserAccessMixin,  UpdateView):
                 Date=form.cleaned_data.get('End_time'),
                 supply=menu6.input1,
                 supply_amt=menu6.input1_amt * -1,
-                UID=form.cleaned_data.get('UID'))
+                UID=self.object.UID)
             input1log.save()
 
             input2log = Inventory_Log(
@@ -217,7 +217,7 @@ class ProductionEndView(LoginRequiredMixin, UserAccessMixin,  UpdateView):
                 Date=form.cleaned_data.get('End_time'),
                 supply=menu7.input1,
                 supply_amt=menu7.input1_amt * -1,
-                UID=form.cleaned_data.get('UID'))
+                UID=self.object.UID)
             input1log.save()
 
             input2log = Inventory_Log(
@@ -238,14 +238,14 @@ class ProductionEndView(LoginRequiredMixin, UserAccessMixin,  UpdateView):
             menu8 = Finished_Tube_1_gram_manuf.objects.first()
             menu8.input1_amt = form.cleaned_data.get('Count') * menu8.input1_amt
             menu8.input2_amt = form.cleaned_data.get('Count') * menu8.input2_amt
-            menu8.input3_amt = form.cleaned_data.get('Count') * menu8.input3_amt
+            menu8.input3_amount = form.cleaned_data.get('Count') * menu8.input3_amount
 
             input1log = Inventory_Log(
                 user_id=self.request.user,
                 Date=form.cleaned_data.get('End_time'),
                 supply=menu8.input1,
                 supply_amt=menu8.input1_amt * -1,
-                UID=form.cleaned_data.get('UID'))
+                UID=self.object.UID)
             input1log.save()
 
             input2log = Inventory_Log(
@@ -259,7 +259,7 @@ class ProductionEndView(LoginRequiredMixin, UserAccessMixin,  UpdateView):
                 user_id=self.request.user,
                 Date=form.cleaned_data.get('End_time'),
                 supply=menu8.input3,
-                supply_amt=menu8.input3_amt * -1)
+                supply_amt=menu8.input3_amount * -1)
             input3log.save()
 
         elif self.object.Task.finished_product == 'A-Bud_grams':
@@ -269,7 +269,7 @@ class ProductionEndView(LoginRequiredMixin, UserAccessMixin,  UpdateView):
                 Date=form.cleaned_data.get('End_time'),
                 supply='B-Bud_grams',
                 supply_amt=form.cleaned_data.get('Count2'),
-                UID=form.cleaned_data.get('UID'))
+                UID=self.object.UID)
             input1log.save()
 
         obj1 = Inventory_Log(
@@ -277,7 +277,7 @@ class ProductionEndView(LoginRequiredMixin, UserAccessMixin,  UpdateView):
             Date=form.cleaned_data.get('End_time'),
             supply=self.object.Task.finished_product,
             supply_amt=form.cleaned_data.get('Count'),
-            UID=form.cleaned_data.get('UID')
+            UID=self.object.UID
         )
 
         obj1.save()

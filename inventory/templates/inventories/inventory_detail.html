@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
+{% block pagetitle %}Inventory Detail{% endblock %}
 {% block content %}
+
 <table class="table table-hover">
     <tr>
         <th>ID</th>
@@ -16,7 +18,9 @@
     <td>{{ object.supply }}</td>
     <td>{{ object.supply_amt }}</td>
     <td>{{ object.Date }}</td>
-    <td><a href="{% url "inventory:inventory-update" object.id %}">Edit</a> </td>
+    {% if request.user.is_staff %}
+    <td><a href="{% url "inventory:inventory-update" object.id %}">(Edit</a> / <a href="{% url "inventory:inventory-delete" object.id %}">Delete)</a></td>
+    {% endif %}
 </tr>
 </table>
 {% endblock %}

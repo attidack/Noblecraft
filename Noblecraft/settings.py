@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 
@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'Noblecraft.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'noblecraft',
+        'NAME': 'noblecraft2',
         'USER': 'postgres',
         'PASSWORD': 'w33disg00d!',
         'HOST': 'localhost',
@@ -142,3 +142,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'noblecraftmail@gmail.com'
 EMAIL_HOST_PASSWORD = 'w33disg00d'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static/')
+]
+

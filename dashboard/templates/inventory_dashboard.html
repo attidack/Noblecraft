@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <table class="table table-hover">
     <tr>
         <th>Supply</th>
         <th>Supply Level</th>
     </tr>
-{% for key, value in finalrep.items %}
+{% for inv in object_list %}
+
     <tr>
-        <td><a href="#">{{key}}</a></td>
-        <td>{{value}}</td>
-    </tr>
-    {% endfor %}
+        <td><a href="{%  url 'dashboard:supply-list' inv.id %}">{{ inv.supply }}</a></td>
+        <td>{{ inv.supply_amt_total }}</td>
+   </tr>
+
+{% endfor %}
 </table>
 {% endblock %}

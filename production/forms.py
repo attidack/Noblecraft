@@ -31,4 +31,5 @@ class ProductionFormEnd(forms.ModelForm):
         fields = [
             'Count',
             'Count2',
+            'notes',
         ]

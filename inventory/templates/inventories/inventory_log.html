@@ -9,6 +9,7 @@
         <th>Supply</th>
         <th>Supply Amount</th>
         <th>UID</th>
+        <th>Location</th>
         <th>Date</th>
     </tr>
 {% for instance in object_list %}
@@ -19,6 +20,7 @@
     <td>{{  instance.supply  }}</td>
     <td>{{  instance.supply_amt  }}</td>
     <td>{{  instance.UID  }}</td>
+    <td>{{  instance.storage_location  }}</td>
     <td>{{  instance.Date  }}</td>
 </tr>
 

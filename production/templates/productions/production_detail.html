@@ -10,6 +10,7 @@
         <th>Count</th>
         <th>Count2</th>
         <th>UID</th>
+        <th>Notes</th>
         <th>Start</th>
         <th>End</th>
     </tr>
@@ -22,6 +23,7 @@
     <td>{{ object.Count }}</td>
     <td>{{ object.Count2 }}</td>
     <td>{{ object.UID }}</td>
+    <td>{{ object.notes }}</td>
     <td>{{ object.Start_time }}</td>
     <td>{{ object.End_time }}</td>
     {% if request.user.is_staff %}

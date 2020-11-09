@@ -8,6 +8,7 @@
         <th>user</th>
         <th>Supply</th>
         <th>Supply Amount</th>
+        <th>Location</th>
         <th>Date</th>
     </tr>
 
@@ -17,6 +18,7 @@
     <td>{{ object.user_id }}</td>
     <td>{{ object.supply }}</td>
     <td>{{ object.supply_amt }}</td>
+    <td>{{ object.storage_location }}</td>
     <td>{{ object.Date }}</td>
     {% if request.user.is_staff %}
     <td><a href="{% url "inventory:inventory-update" object.id %}">(Edit</a> / <a href="{% url "inventory:inventory-delete" object.id %}">Delete)</a></td>

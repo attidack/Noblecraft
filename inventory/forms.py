@@ -1,6 +1,7 @@
 from django import forms
 from .models import Inventory_Log, InventorySupplies
 
+
 class Inventoryform(forms.ModelForm):
     class Meta:
         model = Inventory_Log
@@ -8,8 +9,11 @@ class Inventoryform(forms.ModelForm):
             'user_id',
             'supply',
             'supply_amt',
-            'UID'
+            'UID',
+            'notes',
+            'storage_location'
         ]
+
 
 class InventorySuppliesform(forms.ModelForm):
     class Meta:

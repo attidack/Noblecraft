@@ -5,7 +5,6 @@
     <caption style="caption-side: top ; text-align: center">Production tracker entries</caption>
     <tr>
         <th>ID</th>
-        <th>user_id</th>
         <th>Task</th>
         <th>Count</th>
         <th>Count2</th>
@@ -17,7 +16,6 @@
 
 <tr>
     <td><a href='{{ instance.get_absolute_url }}'>{{ instance.id }}</a></td>
-    <td>{{ instance.user_id }}</td>
     <td>{{  instance.Task  }}</td>
     <td>{{  instance.Count  }}</td>
     <td>{{  instance.Count2  }}</td>
@@ -32,7 +30,6 @@
     <caption style="caption-side: top ; text-align: center">Inventory entries</caption>
     <tr>
         <th>ID</th>
-        <th>user</th>
         <th>Supply</th>
         <th>Amount</th>
         <th>UID</th>
@@ -42,7 +39,6 @@
 
     <tr>
         <td><a href='{{ instance.get_absolute_url }}'> {{ instance.id }}</a></td>
-        <td>{{ instance.user_id }}</td>
         <td>{{  instance.supply  }}</td>
         <td>{{  instance.supply_amt  }}</td>
         <td>{{  instance.UID  }}</td>

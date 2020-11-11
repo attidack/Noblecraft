@@ -20,41 +20,141 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0159a6c5-3382-43b2-aa34-855b5c8bfead" name="Default Changelist" comment="update">
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/supply_delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/supply_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/supply_log.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Noblecraft.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Noblecraft.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_25_2020_7_03_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_25_2020_7_03_PM__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]2/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_2.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/autocomplete.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/base.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/changelists.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/dashboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/fonts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/forms.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/nav_sidebar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/responsive.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/responsive_rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/vendor/select2/LICENSE-SELECT2.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/vendor/select2/select2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/vendor/select2/select2.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/widgets.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/fonts/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/fonts/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/fonts/Roboto-Bold-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/fonts/Roboto-Light-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/fonts/Roboto-Regular-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/calendar-icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/gis/move_vertex_off.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/gis/move_vertex_on.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-addlink.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-alert.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-calendar.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-changelink.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-clock.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-deletelink.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-no.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-unknown-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-unknown.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-viewlink.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-yes.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/inline-delete.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/search.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/selector-icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/sorting-icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/tooltag-add.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/tooltag-arrowright.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/SelectBox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/SelectFilter2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/actions.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/admin/DateTimeShortcuts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/admin/RelatedObjectLookups.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/autocomplete.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/calendar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/cancel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/change_form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/collapse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/collapse.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/core.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/inlines.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/inlines.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/jquery.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/nav_sidebar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/popup_response.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/prepopulate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/prepopulate.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/prepopulate_init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/urlify.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/jquery/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/af.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/az.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/bg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/bn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/bs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ca.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/cs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/da.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/de.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/dsb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/el.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/en.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/es.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/et.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/eu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/gl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/he.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hsb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/id.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/is.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/it.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ja.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ka.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/km.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ko.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/lt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/lv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/mk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ms.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/nb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ne.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/nl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ps.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pt-BR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ro.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ru.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sq.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sr-Cyrl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/th.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/tk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/tr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/uk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/vi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/zh-CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/zh-TW.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/select2.full.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/select2.full.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/xregexp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/xregexp.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/signin.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Noblecraft/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Noblecraft/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/inventory_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/inventory_dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/templates/inventories/inventory_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventories/inventory_create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/templates/inventories/inventory_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventories/inventory_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/templates/inventories/inventory_log.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventories/inventory_log.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/templates/inventories/inventory_supply_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventories/inventory_supply_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/templates/inventories/inventroy_supplies.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventories/inventory_supplies.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/templates/productions/production_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/production/templates/productions/production_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/templates/productions/production_tracker.html" beforeDir="false" afterPath="$PROJECT_DIR$/production/templates/productions/production_tracker.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/production/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/register/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/register/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,8 +301,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Django Server.noblecraft" />
       <item itemvalue="Python.views" />
+      <item itemvalue="Django Server.noblecraft" />
     </list>
     <recent_temporary>
       <list>
@@ -228,7 +328,8 @@
       <workItem from="1603582618075" duration="24482000" />
       <workItem from="1604292059582" duration="651000" />
       <workItem from="1604424501130" duration="15065000" />
-      <workItem from="1604544916429" duration="77948000" />
+      <workItem from="1604544916429" duration="79437000" />
+      <workItem from="1605045243185" duration="2149000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1603077590305</created>
@@ -440,7 +541,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604092314830</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="update">
+      <created>1604959113881</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1604959113881</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,46 +600,46 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="1102" y="410" key="Github.UntrackedFilesDialog/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1603077416137" />
-    <state width="2517" height="339" key="GridCell.Tab.0.bottom" timestamp="1604864528280">
+    <state width="2517" height="537" key="GridCell.Tab.0.bottom" timestamp="1605030723703">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state width="1877" height="580" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.349.1920.1050@-1920.349.1920.1050" timestamp="1603823669037" />
-    <state width="2517" height="339" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1604864528280" />
-    <state width="2517" height="339" key="GridCell.Tab.0.center" timestamp="1604864528280">
+    <state width="2517" height="537" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1605030723703" />
+    <state width="2517" height="537" key="GridCell.Tab.0.center" timestamp="1605030723703">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state width="1877" height="580" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.349.1920.1050@-1920.349.1920.1050" timestamp="1603823669036" />
-    <state width="2517" height="339" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1604864528280" />
-    <state width="2517" height="339" key="GridCell.Tab.0.left" timestamp="1604864528280">
+    <state width="2517" height="537" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1605030723703" />
+    <state width="2517" height="537" key="GridCell.Tab.0.left" timestamp="1605030723702">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state width="1877" height="580" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.349.1920.1050@-1920.349.1920.1050" timestamp="1603823669036" />
-    <state width="2517" height="339" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1604864528280" />
-    <state width="2517" height="339" key="GridCell.Tab.0.right" timestamp="1604864528280">
+    <state width="2517" height="537" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1605030723702" />
+    <state width="2517" height="537" key="GridCell.Tab.0.right" timestamp="1605030723703">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state width="1877" height="580" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.349.1920.1050@-1920.349.1920.1050" timestamp="1603823669036" />
-    <state width="2517" height="339" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1604864528280" />
-    <state width="2517" height="537" key="GridCell.Tab.1.bottom" timestamp="1604864352609">
+    <state width="2517" height="537" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1605030723703" />
+    <state width="2517" height="537" key="GridCell.Tab.1.bottom" timestamp="1605030723703">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state width="1877" height="580" key="GridCell.Tab.1.bottom/0.0.2560.1410/-1920.349.1920.1050@-1920.349.1920.1050" timestamp="1603823697473" />
-    <state width="2517" height="537" key="GridCell.Tab.1.bottom/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1604864352609" />
-    <state width="2517" height="537" key="GridCell.Tab.1.center" timestamp="1604864352609">
+    <state width="2517" height="537" key="GridCell.Tab.1.bottom/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1605030723703" />
+    <state width="2517" height="537" key="GridCell.Tab.1.center" timestamp="1605030723703">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state width="1877" height="580" key="GridCell.Tab.1.center/0.0.2560.1410/-1920.349.1920.1050@-1920.349.1920.1050" timestamp="1603823697473" />
-    <state width="2517" height="537" key="GridCell.Tab.1.center/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1604864352609" />
-    <state width="2517" height="537" key="GridCell.Tab.1.left" timestamp="1604864352609">
+    <state width="2517" height="537" key="GridCell.Tab.1.center/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1605030723703" />
+    <state width="2517" height="537" key="GridCell.Tab.1.left" timestamp="1605030723703">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state width="1877" height="580" key="GridCell.Tab.1.left/0.0.2560.1410/-1920.349.1920.1050@-1920.349.1920.1050" timestamp="1603823697473" />
-    <state width="2517" height="537" key="GridCell.Tab.1.left/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1604864352609" />
-    <state width="2517" height="537" key="GridCell.Tab.1.right" timestamp="1604864352609">
+    <state width="2517" height="537" key="GridCell.Tab.1.left/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1605030723703" />
+    <state width="2517" height="537" key="GridCell.Tab.1.right" timestamp="1605030723703">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state width="1877" height="580" key="GridCell.Tab.1.right/0.0.2560.1410/-1920.349.1920.1050@-1920.349.1920.1050" timestamp="1603823697473" />
-    <state width="2517" height="537" key="GridCell.Tab.1.right/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1604864352609" />
+    <state width="2517" height="537" key="GridCell.Tab.1.right/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1605030723703" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1603037117522">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
@@ -540,10 +648,10 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="781" y="350" key="SettingsEditor/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1604544810901" />
-    <state x="872" y="425" key="Vcs.Push.Dialog.v2" timestamp="1604092320938">
+    <state x="872" y="425" key="Vcs.Push.Dialog.v2" timestamp="1604959127457">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="872" y="425" key="Vcs.Push.Dialog.v2/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1604092320938" />
+    <state x="872" y="425" key="Vcs.Push.Dialog.v2/0.0.2560.1410/-1920.349.1920.1050@0.0.2560.1410" timestamp="1604959127457" />
     <state x="92" y="92" width="2376" height="1226" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1604043759101">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>

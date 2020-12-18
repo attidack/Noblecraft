@@ -18,8 +18,9 @@
     <td>{{ object.supply }}</td>
     <td>{{ object.supply_amt }}</td>
     <td>{{ object.Date }}</td>
-    {% if request.user.is_staff %}
-    <td><a href="{% url "inventories:inventory-supplies-update" object.id %}">(Edit</a> / <a href="{% url "inventories:inventory-supplies-delete" object.id %}">Delete)</a></td>
+    {% if request.user.is_superuser %}
+    <td><a class="btn btn-sm btn-info" href="{% url 'inventory:inventory-update' object.id %}">Update</a></td>
+    <td><a class="btn btn-sm btn-danger" href="{% url "inventory:inventory-delete" object.id %}">Delete</a> </td>
     {% endif %}
 </tr>
 </table>

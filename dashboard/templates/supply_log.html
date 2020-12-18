@@ -1,56 +1,87 @@
 {% extends 'base.html' %}
 {% block pagetitle %}Supply Log{{  object_list.supply  }}{% endblock %}
 {% block content %}
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+            <table class="table table-sm">
+                <tr>
+                    <th>Live</th>
+                    <th>Backstock</th>
+                </tr>
+                <tr>
+                    <td>{% for key, value in live.items %} <span>{{ value }}</span>{% endfor %}</td>
+                    <td>{% for key, value in backstock.items %} <span>{{ value }}</span>{% endfor %}</td>
+                </tr>
+            </table>
+            <table class="table table-hover">
+                <tr>
+                    <th>Total</th>
+                    <th>Today</th>
+                    <th>Week</th>
+                    <th>Month</th>
+                    <th>Year</th>
+                </tr>
+                <tr>
+                    <td>{% for key, value in amount.items %} <span>{{ value }}</span>{% endfor %}</td>
+                    <td>{% for key, value in amount_day.items %} <span>{{ value }}</span>{% endfor %}</td>
+                    <td>{% for key, value in amount_week.items %} <span>{{ value }}</span>{% endfor %}</td>
+                    <td>{% for key, value in amount_month.items %} <span>{{ value }}</span>{% endfor %}</td>
+                    <td>{% for key, value in amount_month.items %} <span>{{ value }}</span>{% endfor %}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+    <br>
+<div class="row">
+	<div class="col">
+		<div class="card card-body">
+			<form method="get">{% csrf_token %}
+                {{ myFilter.form }}
+		    <button class="btn btn-primary" type="submit">Search</button>
+		  </form>
+		</div>
+	</div>
 
-<table class="table table-hover">
-    <tr>
-        <th>Live</th>
-        <th>Backstock</th>
-    </tr>
-    <tr>
-        <td>{% for key, value in live.items %} <span>{{ value }}</span>{% endfor %}</td>
-        <td>{% for key, value in backstock.items %} <span>{{ value }}</span>{% endfor %}</td>
-    </tr>
-    </table>
-    <table class="table table-hover">
-    <tr>
-        <th>Total</th>
-        <th>Today</th>
-        <th>Week</th>
-        <th>Month</th>
-        <th>Year</th>
-    </tr>
-    <tr>
-        <td>{% for key, value in amount.items %} <span>{{ value }}</span>{% endfor %}</td>
-        <td>{% for key, value in amount_day.items %} <span>{{ value }}</span>{% endfor %}</td>
-        <td>{% for key, value in amount_week.items %} <span>{{ value }}</span>{% endfor %}</td>
-        <td>{% for key, value in amount_month.items %} <span>{{ value }}</span>{% endfor %}</td>
-        <td>{% for key, value in amount_month.items %} <span>{{ value }}</span>{% endfor %}</td>
-    </tr>
-    </table>
-    <table class="table table-hover">
-    <tr>
-        <th>ID</th>
-        <th>user</th>
-        <th>Supply</th>
-        <th>Supply Amount</th>
-        <th>UID</th>
-        <th>Location</th>
-        <th>Date</th>
-    </tr>
+</div>
+<br>
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+            <table class="table table-sm">
+                <tr>
+                    <th>ID</th>
+                    <th>user</th>
+                    <th>Supply</th>
+                    <th>Supply Amount</th>
+                    <th>UID</th>
+                    <th>Location</th>
+                    <th>Date</th>
+                    {% if request.user.is_superuser %}
+                    <th>Update</th>
+					<th>Remove</th>
+                    {% endif %}
+                </tr>
 
-{% for instance in object_list %}
-    <tr>
-        <td><a href='{{ instance.get_absolute_url }}'> {{ instance.id }}</a></td>
-        <td>{{ instance.user_id }}</td>
-        <td>{{  instance.supply  }}</td>
-        <td>{{  instance.supply_amt  }}</td>
-        <td>{{  instance.UID  }}</td>
-        <td>{{  instance.storage_location  }}</td>
-        <td>{{  instance.Date  }}</td>
-    </tr>
-
-{% endfor %}
-</table>
+                {% for instance in object_list %}
+                <tr>
+                    <td><a href='{{ instance.get_absolute_url }}'> {{ instance.id }}</a></td>
+                    <td>{{ instance.user_id }}</td>
+                    <td>{{  instance.supply  }}</td>
+                    <td>{{  instance.supply_amt  }}</td>
+                    <td>{{  instance.UID  }}</td>
+                    <td>{{  instance.storage_location  }}</td>
+                    <td>{{  instance.Date  }}</td>
+                    {% if request.user.is_superuser %}
+                    <td><a class="btn btn-sm btn-info" href="{% url 'inventory:inventory-update' instance.id %}">Update</a></td>
+                    <td><a class="btn btn-sm btn-danger" href="{% url "inventory:inventory-delete" instance.id %}">Delete</a> </td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

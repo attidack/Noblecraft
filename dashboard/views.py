@@ -9,6 +9,7 @@ from inventory.models import Inventory_Log, InventorySupplies, StorageLocation
 from django.http import JsonResponse
 # Create your views here.
 from inventory.views import UserAccessMixin
+from .filters import *
 
 
 class EmployeeDashboard(View):
@@ -28,9 +29,9 @@ class InventoryDashboard(LoginRequiredMixin, UserAccessMixin, View):
 
     def get(self, request):
         supply_summery = InventorySupplies.objects.annotate(supply_amt_total=Sum('inventory_log__supply_amt'))
+
         context = {
             'object_list': supply_summery,
-
         }
         return render(request, 'inventory_dashboard.html', context)
 
@@ -52,6 +53,8 @@ class SupplyList(LoginRequiredMixin, UserAccessMixin, View):
         amount_year = logs.filter(Date__year=today.year).aggregate(Sum('supply_amt'))
         live = logs.filter(storage_location=1).aggregate(Sum('supply_amt'))
         backstock = logs.filter(storage_location=2).aggregate(Sum('supply_amt'))
+        myFilter = InventoryFilter(request.GET, queryset=logs)
+        logs = myFilter.qs
 
         context = {
             'object_list': logs.order_by('-pk'),
@@ -62,6 +65,7 @@ class SupplyList(LoginRequiredMixin, UserAccessMixin, View):
             'amount_year': amount_year,
             'live': live,
             'backstock': backstock,
+            'myFilter': myFilter,
         }
 
         return render(request, 'supply_log.html', context)

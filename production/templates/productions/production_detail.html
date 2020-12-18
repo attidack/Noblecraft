@@ -2,33 +2,42 @@
 {% block pagetitle %}Production Detail{% endblock %}
 {% block content %}
 
-<table class="table table-hover">
-    <tr>
-        <th>ID</th>
-        <th>user</th>
-        <th>Task</th>
-        <th>Count</th>
-        <th>Count2</th>
-        <th>UID</th>
-        <th>Notes</th>
-        <th>Start</th>
-        <th>End</th>
-    </tr>
-
-
-<tr>
-    <td>{{object.id}}</td>
-    <td>{{ object.user_id }}</td>
-    <td>{{ object.Task }}</td>
-    <td>{{ object.Count }}</td>
-    <td>{{ object.Count2 }}</td>
-    <td>{{ object.UID }}</td>
-    <td>{{ object.notes }}</td>
-    <td>{{ object.Start_time }}</td>
-    <td>{{ object.End_time }}</td>
-    {% if request.user.is_staff %}
-    <td><a href="{% url "production:production-update" object.id %}">(Edit</a> / <a href="{% url "production:production-delete" object.id %}">Delete)</a> </td>
-    {% endif %}
-</tr>
-</table>
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+            <table class="table table-sm">
+                <tr>
+                    <th class="d-none d-lg-block">ID</th>
+                    <th class="d-none d-lg-block">user</th>
+                    <th>Task</th>
+                    <th>Count</th>
+                    <th class="d-none d-lg-block">Count2</th>
+                    <th>UID</th>
+                    <th class="d-none d-lg-block">Notes</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    {% if request.user.is_superuser %}
+                    <th>Update</th>
+                    <th>Remove</th>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <td class="d-none d-lg-block">{{object.id}}</td>
+                    <td class="d-none d-lg-block">{{ object.user_id }}</td>
+                    <td>{{ object.Task }}</td>
+                    <td>{{ object.Count }}</td>
+                    <td class="d-none d-lg-block">{{ object.Count2 }}</td>
+                    <td>{{ object.UID }}</td>
+                    <td class="d-none d-lg-block">{{ object.notes }}</td>
+                    <td>{{ object.Start_time }}</td>
+                    <td>{{ object.End_time }}</td>
+                    {% if request.user.is_superuser %}
+                    <td><a class="btn btn-sm btn-info" href="{% url 'inventory:inventory-update' object.id %}">Update</a></td>
+                    <td><a class="btn btn-sm btn-danger" href="{% url "inventory:inventory-delete" object.id %}">Delete</a> </td>
+                    {% endif %}
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
 {% endblock %}

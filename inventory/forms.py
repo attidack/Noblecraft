@@ -11,7 +11,7 @@ class Inventoryform(forms.ModelForm):
             'supply_amt',
             'UID',
             'notes',
-            'storage_location'
+            'storage_location',
         ]
 
 

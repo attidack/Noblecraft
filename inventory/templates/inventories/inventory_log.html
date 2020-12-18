@@ -1,30 +1,35 @@
 {% extends 'base.html' %}
 {% block pagetitle %}Inventory Log{% endblock %}
 {% block content %}
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+            <table class="table table-hover">
+                <tr>
+                    <th>ID</th>
+                    <th>user</th>
+                    <th>Supply</th>
+                    <th>Supply Amount</th>
+                    <th>UID</th>
+                    <th>Location</th>
+                    <th>Date</th>
+                </tr>
+            {% for instance in object_list %}
 
-<table class="table table-hover">
-    <tr>
-        <th>ID</th>
-        <th>user</th>
-        <th>Supply</th>
-        <th>Supply Amount</th>
-        <th>UID</th>
-        <th>Location</th>
-        <th>Date</th>
-    </tr>
-{% for instance in object_list %}
+            <tr>
+                <td><a href='{{ instance.get_absolute_url }}'> {{ instance.id }}</a></td>
+                <td>{{ instance.user_id }}</td>
+                <td>{{  instance.supply  }}</td>
+                <td>{{  instance.supply_amt  }}</td>
+                <td>{{  instance.UID  }}</td>
+                <td>{{  instance.storage_location  }}</td>
+                <td>{{  instance.Date  }}</td>
+            </tr>
 
-<tr>
-    <td><a href='{{ instance.get_absolute_url }}'> {{ instance.id }}</a></td>
-    <td>{{ instance.user_id }}</td>
-    <td>{{  instance.supply  }}</td>
-    <td>{{  instance.supply_amt  }}</td>
-    <td>{{  instance.UID  }}</td>
-    <td>{{  instance.storage_location  }}</td>
-    <td>{{  instance.Date  }}</td>
-</tr>
-
-{% endfor %}
-    </table>
+            {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

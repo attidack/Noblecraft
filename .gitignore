@@ -1,0 +1,7 @@
+*.pyc
+db.sqlite3
+venv/
+settings.py
+livesettings.py
+.idea
+uploaded_media
